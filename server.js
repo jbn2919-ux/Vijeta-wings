@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 10000;
-const ROOT = path.join(__dirname, 'public');
+const ROOT = __dirname;
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -20,16 +20,24 @@ const MIME = {
 
 const server = http.createServer((req, res) => {
   let urlPath;
+
   try {
-    urlPath = decodeURIComponent(new URL(req.url, `http://${req.headers.host || 'localhost'}`).pathname);
+    urlPath = decodeURIComponent(
+      new URL(req.url, `http://${req.headers.host || 'localhost'}`).pathname
+    );
   } catch {
     res.writeHead(400);
     return res.end('Bad Request');
   }
 
-  if (urlPath === '/') urlPath = '/index.html';
+  // Main website
+  if (urlPath === '/') {
+    urlPath = '/index.html';
+  }
 
   const filePath = path.normalize(path.join(ROOT, urlPath));
+
+  // Security: ROOT ke bahar file access na ho
   if (!filePath.startsWith(ROOT + path.sep) && filePath !== ROOT) {
     res.writeHead(403);
     return res.end('Forbidden');
@@ -37,15 +45,19 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, stat) => {
     if (err || !stat.isFile()) {
-      res.writeHead(404, {'Content-Type':'text/plain; charset=utf-8'});
+      res.writeHead(404, {
+        'Content-Type': 'text/plain; charset=utf-8'
+      });
       return res.end('Not Found');
     }
 
     const ext = path.extname(filePath).toLowerCase();
+
     res.writeHead(200, {
       'Content-Type': MIME[ext] || 'application/octet-stream',
       'Cache-Control': 'no-cache'
     });
+
     fs.createReadStream(filePath).pipe(res);
   });
 });
