@@ -1,0 +1,12 @@
+{
+  "name": "vijeta-wings",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VIJETA WINGS website based on supplied Wings.html",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
