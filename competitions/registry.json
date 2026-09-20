@@ -1,0 +1,122 @@
+{
+  "_comment": "Vijeta Wings — single source of truth for competitions. एक competition expire करने के लिए: सिर्फ इस JSON में 'expired': true / 'endDate' पुरानी कर दो। GitHub Action daily cleanup permanent delete कर देगा। हर नई competition के लिए +1 entry जोड़ना और HTML में corresponding running-card/coming-card भी add करना जारी रखना।",
+  "_rules": {
+    "expired_means": "endDate < TODAY (Asia/Kolkata) → पूरी entry से poster और T&C permanently remove",
+    "endDate_format": "ISO date YYYY-MM-DD",
+    "timezone": "Asia/Kolkata (IST, UTC+5:30)"
+  },
+  "competitions": [
+    {
+      "id": "platinum",
+      "name": "PLATINUM DHAMAKA — Agent Business",
+      "endDate": "2026-09-30",
+      "poster": "images/i01.jpg",
+      "tcNote": "01–30 Sep 2026 | Total NOP, Total TFP"
+    },
+    {
+      "id": "missionPlatinumAgent",
+      "name": "MISSION PLATINUM — Agent Campaign",
+      "endDate": "2026-09-30",
+      "poster": "images/i02.jpg",
+      "tcNote": "01 Aug–30 Sep 2026"
+    },
+    {
+      "id": "platinumNspBonanza",
+      "name": "PLATINUM NSP BONANZA",
+      "endDate": "2026-09-30",
+      "poster": "images/i03.jpg",
+      "tcNote": "Qualifying NSP slabs"
+    },
+    {
+      "id": "picnic",
+      "name": "पॉलिसी करें, पिकनिक चलें",
+      "endDate": "2026-09-11",
+      "poster": "images/i04.jpg",
+      "tcNote": "02–11 Sep 2026 NOP"
+    },
+    {
+      "id": "gatewayPlatinum",
+      "name": "GATEWAY TO PURI",
+      "endDate": "2026-08-31",
+      "poster": "images/i05.jpg",
+      "tcNote": "August 2026 | gateway NOP"
+    },
+    {
+      "id": "platinumLuckyDraw",
+      "name": "PLATINUM LUCKY DRAW",
+      "endDate": "2026-09-30",
+      "poster": "images/i06.jpg",
+      "tcNote": "Sep lucky draw qualification"
+    },
+    {
+      "id": "aaaAgents",
+      "name": "AAA — Active Agent Award",
+      "endDate": "2027-03-31",
+      "poster": "images/i07.jpg",
+      "tcNote": "01 Sep 2026–31 Mar 2027 | NOP + WRP + FYPI"
+    },
+    {
+      "id": "uleap",
+      "name": "U-LEAP — ULIP Eligibility & Data",
+      "endDate": "2026-09-30",
+      "poster": "images/i08.jpg",
+      "tcNote": "01–30 Sep 2026 | ULIP eNACH"
+    },
+    {
+      "id": "activeSep",
+      "name": "ACTIVE SEPTEMBER — NB Campaign (DO)",
+      "endDate": "2026-09-30",
+      "poster": "images/i09.jpg",
+      "tcNote": "Activation % on 31-08-2026 strength"
+    },
+    {
+      "id": "activeSep2Do",
+      "name": "ACTIVE SEPTEMBER 2.0 — DO Ladder",
+      "endDate": "2026-09-30",
+      "poster": "images/i10.jpg",
+      "tcNote": "Higher activation targets"
+    },
+    {
+      "id": "biggerTeam",
+      "name": "BIGGER TEAM — Recruit + Activate",
+      "endDate": "2026-10-31",
+      "poster": "images/i11.jpg",
+      "tcNote": "Recruitment + Activation targets"
+    },
+    {
+      "id": "missionPlatinum",
+      "name": "MISSION PLATINUM — DO/SBA Campaign",
+      "endDate": "2026-09-30",
+      "poster": "images/i12.jpg",
+      "tcNote": "DO/SBA/LICA Policy, NSP, FPI"
+    },
+    {
+      "id": "bmoRecruit",
+      "name": "BMO — Recruitment + Activation",
+      "endDate": "2026-10-31",
+      "poster": "images/i13.jpg",
+      "tcNote": "BMO 6–15% strength"
+    },
+    {
+      "id": "bmoSpecial",
+      "name": "BMO SPECIAL — A2B / NOP",
+      "endDate": "2026-09-30",
+      "poster": "images/i14.jpg",
+      "tcNote": "BMO A2B / NOP combo"
+    },
+    {
+      "id": "cliaShikhar",
+      "name": "CLIA SHIKHAR — NOP + WRP + FYPI",
+      "endDate": "2027-03-31",
+      "poster": "images/i15.jpg",
+      "tcNote": "CLIA combined milestone"
+    },
+    {
+      "id": "activeSep2Clia",
+      "name": "ACTIVE SEPTEMBER 2.0 — CLIA Ladder",
+      "endDate": "2026-09-30",
+      "poster": "images/i16.jpg",
+      "tcNote": "CLIA activation 2.0"
+    }
+  ]
+}
