@@ -376,6 +376,11 @@ html,body{max-width:100%;overflow-x:hidden}
 <div class="field"><label>Valid Appointment Letter?</label><select id="appointment"><option value="yes">हाँ</option><option value="no">नहीं</option></select><small>U-LEAP eligibility के लिए जरूरी।</small></div>
 </div></div>
 
+<div class="group" data-comp="gatewayLuckyDraw"><h4>9️⃣ GATEWAY TO LUCKY DRAW — Agent Data</h4>
+<div class="formgrid">
+<div class="field"><label>17–22 Sep की NOP (Gateway to Lucky Draw)</label><input type="number" id="glNop" min="0" value="0"><small>1 NOP = LIC बैग • 2 NOP = पैटर्न वाला बैग • 3 NOP = दोनों बैग। Minimum Premium: ULIP ₹4,000 / Non-ULIP ₹2,000। जन सुरक्षा (HLY/YLY) मान्य, बशर्ते premium कम-से-कम ₹2,000 हो। 751 (Micro Bachat) मान्य नहीं।</small></div>
+</div><div class="small-note"><b>Poster:</b> 17.09.2026 – 22.09.2026 • 3 से ऊपर की policies पर अभिकर्ता जोनल ऑफिस की प्लेटिनम धमाका प्रतियोगिता के लिए qualify करेंगे।</div></div>
+
 </div>
 <div class="combined-summary" id="agentCombinedSummary" style="margin-top:14px"></div>
 <div class="agent-basis-wrap" id="agentBasisWrap">
@@ -515,6 +520,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <div class="poster" data-role="dos" data-comp="activeSep2Do"><img src="images/i08.jpg" alt="ACTIVE SEPTEMBER-2 — NB Campaign for DOs / SBAs / LICAs (16-09-2026 to 30-09-2026)" loading="lazy" decoding="async"><div class="cap">ACTIVE SEPTEMBER-2 — NB Campaign for DOs / SBAs / LICAs (16-09-2026 to 30-09-2026)</div></div>
 <div class="poster" data-role="clia" data-comp="activeSep2Clia"><img src="images/i09.jpg" alt="ACTIVE SEPTEMBER-2 — NB Campaign for CLIAs / COs (16-09-2026 to 30-09-2026)" loading="lazy" decoding="async"><div class="cap">ACTIVE SEPTEMBER-2 — NB Campaign for CLIAs / COs (16-09-2026 to 30-09-2026)</div></div>
 <div class="poster" data-role="agent" data-comp="platinumLuckyDraw"><img src="images/i10.jpg" alt="प्लेटिनम धमाका — Lucky Draw अवधि विस्तार, अंतिम तिथि 22-09-2026 (बेगूसराय मंडल)" loading="lazy" decoding="async"><div class="cap">प्लेटिनम धमाका — Lucky Draw अंतिम तिथि 22-09-2026 तक बढ़ी (बेगूसराय मंडल)</div></div>
+<div class="poster" data-role="agent" data-comp="gatewayLuckyDraw"><img src="images/i17.jpg" alt="Gateway to Lucky Draw — 17.09.2026 to 22.09.2026" loading="lazy" decoding="async"><div class="cap">गेट-वे-टू लकी ड्रॉ — Gateway to Lucky Draw (17-09-2026 to 22-09-2026) — Agent</div></div>
     </div>
     <div class="section-title">🖼️ Source Posters</div>
     <div class="poster-grid">
@@ -534,6 +540,7 @@ const baseComps=[
 {id:'platinum',name:'प्लेटिनम धमाका',start:'2026-09-01',end:'2026-09-30',roles:['agent']},
 {id:'picnic',name:'पॉलिसी करें, पिकनिक चलें',start:'2026-09-02',end:'2026-09-11',roles:['agent']},
 {id:'gatewayPlatinum',name:'Gateway to प्लेटिनम धमाका',start:'2026-09-12',end:'2026-09-15',roles:['agent']},
+{id:'gatewayLuckyDraw',name:'गेट-वे-टू लकी ड्रॉ — Gateway to Lucky Draw',start:'2026-09-17',end:'2026-09-22',roles:['agent']},
 {id:'bmoRecruit',name:'Agents Recruitment & Activation Campaign — BMO',start:'2026-07-01',end:'2026-09-30',roles:['marketing']},
 {id:'aaaAgents',name:'अभियान AAA — हमेशा सक्रिय एजेंट',start:'2026-05-01',end:'2027-03-31',roles:['agent']},
 {id:'biggerTeam',name:'BIGGER TEAM — GREATER GAIN',start:'2026-07-01',end:'2026-09-30',roles:['dos']},
@@ -708,7 +715,7 @@ function agentOverlapSafeBusiness(){
  // Therefore we use the largest comparable NOP total among the overlapping
  // monthly/September views instead of summing them. AAA is excluded from this
  // monthly combined count because its campaign period/definition is different.
- const nopViews=[v('pdNop'),v('mpaPolicies'),v('gatewayNop'),v('picnicNop'),v('luckyDrawNop'),v('ulip')];
+ const nopViews=[v('pdNop'),v('mpaPolicies'),v('gatewayNop'),v('glNop'),v('picnicNop'),v('luckyDrawNop'),v('ulip')];
  const uniqueNop=Math.max(0,...nopViews);
  // Premium measures are not interchangeable (TFP/FPI/NSP can overlap), so
  // never add them together. Show the largest comparable entered measure and
@@ -903,7 +910,7 @@ function calcLuckyDraw(){
  const n=v('luckyDrawNop'); return{n,coupons:n};
 }
 
-const ENTRY_FIELDS={platinum:['pdNop','pdTfp'],missionPlatinumAgent:['mpaPolicies','mpaNsp','mpaFpi'],platinumNspBonanza:['pnbNsp'],picnic:['picnicNop'],gatewayPlatinum:['gatewayNop'],platinumLuckyDraw:['luckyDrawNop'],aaaAgents:['aaaNop','aaaWrp','aaaFypi','aaaFirstPremium'],uleap:['ulip','invalidUlip'],activeSep:['dosAgencyStrength','dosActiveAgents','dosAugActive','dosInactiveActivated'],biggerTeam:['btRecruited','btActivated'],missionPlatinum:['mpPolicies','mpNsp','mpFpi'],bmoRecruit:['bmoStrength','bmoRecruited','bmoActivated'],bmoSpecial:['bmoSpA2b','bmoSpNop'],cliaShikhar:['cliaRecruited','cliaActivated','cliaNop','cliaWrp','cliaFypi'],activeSep2Do:['as2dStrength','as2dActive','as2dEarly','as2dInactive'],activeSep2Clia:['as2cStrength','as2cActive','as2cEarly','as2cInactive']};
+const ENTRY_FIELDS={platinum:['pdNop','pdTfp'],missionPlatinumAgent:['mpaPolicies','mpaNsp','mpaFpi'],platinumNspBonanza:['pnbNsp'],picnic:['picnicNop'],gatewayPlatinum:['gatewayNop'],gatewayLuckyDraw:['glNop'],platinumLuckyDraw:['luckyDrawNop'],aaaAgents:['aaaNop','aaaWrp','aaaFypi','aaaFirstPremium'],uleap:['ulip','invalidUlip'],activeSep:['dosAgencyStrength','dosActiveAgents','dosAugActive','dosInactiveActivated'],biggerTeam:['btRecruited','btActivated'],missionPlatinum:['mpPolicies','mpNsp','mpFpi'],bmoRecruit:['bmoStrength','bmoRecruited','bmoActivated'],bmoSpecial:['bmoSpA2b','bmoSpNop'],cliaShikhar:['cliaRecruited','cliaActivated','cliaNop','cliaWrp','cliaFypi'],activeSep2Do:['as2dStrength','as2dActive','as2dEarly','as2dInactive'],activeSep2Clia:['as2cStrength','as2cActive','as2cEarly','as2cInactive']};
 function compHasEntry(id){const fs=ENTRY_FIELDS[id];if(!fs)return true;return fs.some(x=>{const e=document.getElementById(x);if(!e)return false;if(e.type==='number')return Number(e.value)>0;return e.value==='yes'})}
 function getAgentBasis(){return document.getElementById('agentBasis')?.value||'';}
 function buildCombinedBlocks(ctx){
@@ -915,7 +922,7 @@ function buildCombinedBlocks(ctx){
    // v42 FIX: Combined ladder अब हर competition की अपनी entered achievement पर चलता है।
    // Overlapping periods के inputs को mix नहीं किया जाता — इसलिए 01–30 Sep की entered policies
    // डालते ही ladder सही जगह "पहुँचा हुआ" दिखाता है, और short-window competitions अपनी अवधि का data माँगते हैं।
-   const pdN=P.n,pdT=P.t,mpaP=MPA.p,mpaN=MPA.nsp,mpaF=MPA.fpi,pnb=PNB.nsp,uValid=U.valid,uOk=U.eligible,gNop=v('gatewayNop'),picN=Pic.n,aaaN=AAA.n,aaaOk=AAA.eligible;
+   const pdN=P.n,pdT=P.t,mpaP=MPA.p,mpaN=MPA.nsp,mpaF=MPA.fpi,pnb=PNB.nsp,uValid=U.valid,uOk=U.eligible,gNop=v('gatewayNop'),picN=Pic.n,aaaN=AAA.n,aaaOk=AAA.eligible,glN=v('glNop');
    const L2=x=>Number(x||0).toLocaleString('en-IN',{maximumFractionDigits:2});
    const add=(title,total,tN,tT,achN,achT,days,benefit,compId,kind,eligOk,eligNote)=>{
      if(!compIsUsable(compId,as)) return;
@@ -942,6 +949,9 @@ function buildCombinedBlocks(ctx){
    add('1 Gateway Policy — Quick Win','1 NOP (12–15 Sep)',1,0,gNop,0,daysLeft('2026-09-15',as),'Gateway to प्लेटिनम धमाका — ₹150','gatewayPlatinum','nop');
    add('2 Gateway Policies — Quick Win','2 NOP (12–15 Sep)',2,0,gNop,0,daysLeft('2026-09-15',as),'Gateway to प्लेटिनम धमाका — ₹300','gatewayPlatinum','nop');
    add('3 Gateway Policies — Quick Win','3 NOP (12–15 Sep)',3,0,gNop,0,daysLeft('2026-09-15',as),'Gateway to प्लेटिनम धमाका — ₹450','gatewayPlatinum','nop');
+    add('1 Gateway Lucky Draw Policy — Quick Win','1 NOP (17–22 Sep)',1,0,glN,0,daysLeft('2026-09-22',as),'Gateway to Lucky Draw — LIC बैग','gatewayLuckyDraw','nop');
+    add('2 Gateway Lucky Draw Policies — Quick Win','2 NOP (17–22 Sep)',2,0,glN,0,daysLeft('2026-09-22',as),'Gateway to Lucky Draw — पैटर्न वाला बैग','gatewayLuckyDraw','nop');
+    add('3 Gateway Lucky Draw Policies — Quick Win','3 NOP (17–22 Sep)',3,0,glN,0,daysLeft('2026-09-22',as),'Gateway to Lucky Draw — दोनों बैग (LIC बैग + पैटर्न वाला बैग)','gatewayLuckyDraw','nop');
    // 2) प्लेटिनम धमाका — 01–30 Sep की entered NOP/TFP पर (Multipurpose Fan से Royal Enfield तक)
    platinum.forEach(x=>{add(`${x[0]} NOP OR ₹${x[1]} लाख TFP`,`${x[0]} NOP OR ₹${x[1]} लाख TFP (01–30 Sep)`,x[0],x[1],pdN,pdT,daysLeft('2026-09-30',as),'प्लेटिनम धमाका — '+x[2],'platinum','both');});
    // 3) MISSION PLATINUM — Agent Campaign (01 Aug–30 Sep) — Policies / NSP / FPI routes
@@ -1033,6 +1043,12 @@ function calculate(role){
    if(gN>=3)won.push({name:'GATEWAY TO प्लेटिनम धमाका — 3 NOP',prize:'₹450',note:'12–15 Sep की '+gN+' NOP • केवल highest slab ₹450'});
    else if(gN>=2)won.push({name:'GATEWAY TO प्लेटिनम धमाका — 2 NOP',prize:'₹300',note:'12–15 Sep की 2 NOP • केवल highest slab'});
    else if(gN>=1)won.push({name:'GATEWAY TO प्लेटिनम धमाका — 1 NOP',prize:'₹150',note:'12–15 Sep की 1 NOP'});
+   const glN2=v('glNop');
+   if(!compIsClosed('gatewayLuckyDraw',as)){
+    if(glN2>=3)won.push({name:'GATEWAY TO LUCKY DRAW — 3 NOP',prize:'दोनों बैग (LIC बैग + पैटर्न वाला बैग)',note:'17–22 Sep की '+glN2+' NOP • केवल highest slab'});
+    else if(glN2>=2)won.push({name:'GATEWAY TO LUCKY DRAW — 2 NOP',prize:'पैटर्न वाला बैग',note:'17–22 Sep की 2 NOP • केवल highest slab'});
+    else if(glN2>=1)won.push({name:'GATEWAY TO LUCKY DRAW — 1 NOP',prize:'LIC बैग',note:'17–22 Sep की 1 NOP'});
+   }
    if(MPA.reached>=0)won.push({name:'MISSION PLATINUM (Agent) — Level '+(MPA.reached+1),prize:missionPlatinumAgent[MPA.reached][3],note:v('mpaPolicies')+' Policies / ₹'+v('mpaNsp')+' lakh NSP / ₹'+v('mpaFpi')+' lakh FPI • केवल highest level'});
    if(PNB.reached>=0)won.push({name:'PLATINUM NSP BONANZA — ₹'+platinumNspBonanza[PNB.reached][0]+' लाख NSP slab',prize:money(PNB.reward),note:'₹'+PNB.nsp+' lakh qualifying NSP • केवल highest slab'});
    if(LD.n>0)won.push({name:'प्लेटिनम धमाका — Lucky Draw Coupons',prize:LD.coupons+' Coupon'+(LD.coupons>1?'s':''),note:'हर eligible policy पर 1 coupon (cumulative) — अंतिम तिथि 22-09-2026 • 1st LED TV • 2nd Refrigerator • 3rd Microwave'});
@@ -1058,7 +1074,7 @@ function calculate(role){
  const blocks=buildCombinedBlocks({as,AAA,BMO,BT,MP,CL,U,P,Pic,A,MPA,PNB,LD,BS,A2D,A2C});
 
  const hasAnyBusiness =
-   selectedRole==='agent' ? (AAA.n>0||AAA.w>0||AAA.f>0||AAA.fp>0||P.n>0||P.t>0||U.valid>0||Pic.n>0||v('gatewayNop')>0||MPA.p>0||MPA.nsp>0||MPA.fpi>0||PNB.nsp>0||LD.n>0) :
+   selectedRole==='agent' ? (AAA.n>0||AAA.w>0||AAA.f>0||AAA.fp>0||P.n>0||P.t>0||U.valid>0||Pic.n>0||v('gatewayNop')>0||v('glNop')>0||MPA.p>0||MPA.nsp>0||MPA.fpi>0||PNB.nsp>0||LD.n>0) :
    selectedRole==='dos' ? (A.strength>0||A.active>0||A.augActive>0||A.inactiveActivated>0||BT.recruited>0||BT.activated>0||MP.p>0||MP.nsp>0||MP.fpi>0||A2D.strength>0||A2D.active>0) :
    selectedRole==='marketing' ? (BMO.strength>0||BMO.recruited>0||BMO.activated>0||BS.a2b>0||BS.nop>0) :
    (CL.recruited>0||CL.activated>0||CL.n>0||CL.w>0||CL.f>0||A2C.strength>0||A2C.active>0);
@@ -1068,7 +1084,7 @@ function calculate(role){
  let firstUndone=allRows.find(r=>!r.done)||null;
  // v43 FIX: अगला Milestone हमेशा entered achievement से आगे वाला होगा — 150 policies करने के बाद "1 NOP" जैसा पिछला target कभी अगला milestone नहीं दिखेगा (NOP या Premium — दोनों basis पर)।
  if(selectedRole==='agent'&&firstUndone&&basis){
-   const achN=Math.max(P.n,Pic.n,v('gatewayNop'),U.valid,AAA.n,MPA.p);
+   const achN=Math.max(P.n,Pic.n,v('gatewayNop'),v('glNop'),U.valid,AAA.n,MPA.p);
    const achP=Math.max(P.t,PNB.nsp,MPA.nsp,MPA.fpi);
    const ahead=r=>{
      if(r.kind==='premium')return r.sortKey>achP;
@@ -1317,6 +1333,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     platinumNspBonanza:['pnbNsp'],
     picnic:['picnicNop','puriQualified'],
     gatewayPlatinum:['gatewayNop'],
+    gatewayLuckyDraw:['glNop'],
     platinumLuckyDraw:['luckyDrawNop'],
     aaaAgents:['aaaNop','aaaWrp','aaaFypi','aaaMonthly','aaaFirstPremium'],
     uleap:['ulip','invalidUlip','enach','appointment'],
@@ -1331,7 +1348,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     missionPlatinum:['mission platinum — development officers','mission platinum — development'], cliaShikhar:['शिखर की ओर शिखर'],
     missionPlatinumAgent:['mission platinum — new business campaign for agents'], platinumNspBonanza:['platinum nsp bonanza'],
     uleap:['u-leap'], platinum:['platinum dhamaka — updated poster'], picnic:['policy picnic'], platinumLuckyDraw:['platinum dhamaka — updated poster'],
-    gatewayPlatinum:['gateway to platinum dhamaka','gateway to प्लेटिनम धमाका'],
+    gatewayPlatinum:['gateway to platinum dhamaka','gateway to प्लेटिनम धमाका'],gatewayLuckyDraw:['gateway to lucky draw','गेट-वे-टू लकी ड्रॉ'],
     bmoSpecial:["bmo's special",'branch marketing officials'],activeSep2Do:['active september-2 — nb campaign for dos'],activeSep2Clia:['active september-2 — nb campaign for clias']
   };
   function closed(id){return compIsClosed(id,todayISO())}
@@ -1356,7 +1373,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
     // Dynamic competition input groups already use active-only rendering.
     const clears={
-      picnic:['picnicNop'],gatewayPlatinum:['gatewayNop'],platinum:['pdNop','pdTfp'],missionPlatinumAgent:['mpaPolicies','mpaNsp','mpaFpi'],
+      picnic:['picnicNop'],gatewayPlatinum:['gatewayNop'],gatewayLuckyDraw:['glNop'],platinum:['pdNop','pdTfp'],missionPlatinumAgent:['mpaPolicies','mpaNsp','mpaFpi'],
       platinumNspBonanza:['pnbNsp'],platinumLuckyDraw:['luckyDrawNop'],aaaAgents:['aaaNop','aaaWrp','aaaFypi','aaaFirstPremium'],
       uleap:['ulip','invalidUlip'],activeSep:['dosAgencyStrength','dosActiveAgents','dosAugActive','dosInactiveActivated'],
       biggerTeam:['btRecruited','btActivated'],missionPlatinum:['mpPolicies','mpNsp','mpFpi'],bmoRecruit:['bmoStrength','bmoRecruited','bmoActivated'],
@@ -1429,6 +1446,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       uleap:'11 ULIP ₹5,000 → 21 ₹15,000 → 35 ₹35,000 → 51 ₹65,000 → 75 ₹1,00,000 → 101 ₹1,75,000',
       platinum:'5/7/10/15/21/31/41/51/75/101/125/150 NOP OR TFP milestones — Fan से Royal Enfield तक',
       gatewayPlatinum:'1 NOP ₹150 • 2 NOP ₹300 • 3 NOP ₹450 • 12–15 Sep',
+      gatewayLuckyDraw:'17–22 Sep: 1 NOP = LIC बैग • 2 NOP = पैटर्न वाला बैग • 3 NOP = दोनों बैग • Min premium ULIP ₹4,000 / Non-ULIP ₹2,000 • 751 मान्य नहीं',
       bmoRecruit:'6% recruitment + activation = ₹5,000 per BMO • हर अतिरिक्त 1% = ₹2,500',
       aaaAgents:'12 / 50 / 100 Policies milestones • आगे हर 15 policies पर ₹1,500',
       biggerTeam:'2 recruited + activated agents = ₹4,000 • हर अतिरिक्त agent ₹2,000 • cap ₹1 lakh',
@@ -1457,6 +1475,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     const as=todayISO(), rows=[];
     if(id==='gatewayPlatinum'){
       [[1,'₹150'],[2,'₹300'],[3,'₹450']].forEach(x=>rows.push({n:x[0],title:`${x[0]} NOP`,reward:x[1],done:v('gatewayNop')>=x[0]}));
+    } else if(id==='gatewayLuckyDraw'){
+      [[1,'LIC बैग'],[2,'पैटर्न वाला बैग'],[3,'दोनों बैग']].forEach(x=>rows.push({n:x[0],title:`${x[0]} NOP`,reward:x[1],done:v('glNop')>=x[0]}));
     } else if(id==='picnic'){
       [[1,'₹150'],[2,'₹300'],[3,'Picnic (Single)']].forEach(x=>rows.push({n:x[0],title:`${x[0]} NOP`,reward:x[1],done:v('picnicNop')>=x[0]}));
     } else if(id==='platinum'){
@@ -1628,7 +1648,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 (function(){
   const CF={
     platinum:['pdNop','pdTfp'], missionPlatinumAgent:['mpaPolicies','mpaNsp','mpaFpi'],
-    platinumNspBonanza:['pnbNsp'], picnic:['picnicNop','puriQualified'], gatewayPlatinum:['gatewayNop'],
+    platinumNspBonanza:['pnbNsp'], picnic:['picnicNop','puriQualified'], gatewayPlatinum:['gatewayNop'], gatewayLuckyDraw:['glNop'],
     platinumLuckyDraw:['luckyDrawNop'], aaaAgents:['aaaNop','aaaWrp','aaaFypi','aaaMonthly','aaaFirstPremium'],
     uleap:['ulip','invalidUlip','enach','appointment'], activeSep:['dosAgencyStrength','dosActiveAgents','dosAugActive','dosInactiveActivated'],
     biggerTeam:['btRecruited','btActivated'], missionPlatinum:['mpPolicies','mpNsp','mpFpi'],
@@ -1664,7 +1684,9 @@ document.addEventListener('DOMContentLoaded',()=>{
   function rowData(id){
     const as=todayISO(), rows=[];
     const d=(target,done,needNop=0,needPrem=0,title='',reward='',total='')=>rows.push({target,done,needNop,needPrem,title,reward,total,days:daysLeft(target==='—'?as:target,as)});
-    if(id==='gatewayPlatinum'){
+    if(id==='gatewayLuckyDraw'){
+      const n=num('glNop'); [[1,'LIC बैग'],[2,'पैटर्न वाला बैग'],[3,'दोनों बैग (LIC बैग + पैटर्न वाला बैग)']].forEach(([t,r])=>rows.push({done:n>=t,needNop:Math.max(0,t-n),needPrem:0,title:`${t} NOP`,reward:r,total:`${t} NOP (17–22 Sep)`,days:daysLeft('2026-09-22',as)}));
+    } else if(id==='gatewayPlatinum'){
       const n=num('gatewayNop'); [[1,'₹150'],[2,'₹300'],[3,'₹450']].forEach(([t,r])=>rows.push({done:n>=t,needNop:Math.max(0,t-n),needPrem:0,title:`${t} NOP`,reward:r,total:`${t} NOP (12–15 Sep)`,days:daysLeft('2026-09-15',as)}));
     } else if(id==='picnic'){
       const n=num('picnicNop'); [[1,'₹150'],[2,'₹300'],[3,'Picnic (Single)']].forEach(([t,r])=>rows.push({done:n>=t,needNop:Math.max(0,t-n),needPrem:0,title:`${t} NOP`,reward:r,total:`${t} NOP (02–11 Sep)`,days:daysLeft('2026-09-11',as)}));
@@ -1712,6 +1734,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const m={};
     const set=(nop,prem,premLabel='Premium')=>{m.nop=Number(nop||0);m.prem=Number(prem||0);m.premLabel=premLabel;};
     if(id==='gatewayPlatinum') set(num('gatewayNop'),0,'Premium');
+    if(id==='gatewayLuckyDraw') set(num('glNop'),0,'Premium');
     else if(id==='picnic') set(num('picnicNop'),0,'Premium');
     else if(id==='platinum') set(num('pdNop'),num('pdTfp'),'TFP');
     else if(id==='missionPlatinumAgent') set(num('mpaPolicies'),num('mpaFpi'),'FPI');
@@ -1770,7 +1793,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const upcoming=comps.filter(c=>state(c,as)==='upcoming'&&(!c.roles||c.roles.includes(role))).sort((a,b)=>dateObj(a.start)-dateObj(b.start));
     const top=document.getElementById('runningCountTop'),numEl=document.getElementById('runningCount'),dateEl=document.getElementById('todayText'); if(top)top.textContent=list.length;if(numEl)numEl.textContent=list.length;if(dateEl)dateEl.textContent=fmt(as);
     const sub=document.querySelector('.running-hero .running-sub');if(sub)sub.innerHTML=`आज की तारीख: <b>${fmt(as)}</b> • नीचे केवल आज active competitions हैं।`;
-    const text={activeSep:'Level A: 30% activation • Level B: 35% • Level C: 40% (August 2026) • inactive-agent activation पर ₹200 each',uleap:'11 ULIP ₹5,000 → 21 ₹15,000 → 35 ₹35,000 → 51 ₹65,000 → 75 ₹1,00,000 → 101 ₹1,75,000',platinum:'5/7/10/15/21/31/41/51/75/101/125/150 NOP OR TFP milestones — Fan से Royal Enfield तक',gatewayPlatinum:'1 NOP ₹150 • 2 NOP ₹300 • 3 NOP ₹450',bmoRecruit:'6% recruitment + activation = ₹5,000 per BMO • हर अतिरिक्त 1% = ₹2,500',aaaAgents:'12 / 50 / 100 Policies milestones • आगे हर 15 policies पर ₹1,500',biggerTeam:'2 recruited + activated agents = ₹4,000 • हर अतिरिक्त agent ₹2,000 • cap ₹1 lakh',missionPlatinum:'125 / 200 / 325 / 525 / 800 Policies OR NSP/FPI thresholds',missionPlatinumAgent:'50 / 75 / 125 / 200 / 300 Policies OR NSP/FPI thresholds',platinumNspBonanza:'NSP ₹5L/₹7L/₹12L/₹20L/₹30L/₹50L slabs; thereafter every ₹10L block',platinumLuckyDraw:'01–15 Sep: eligible policy पर 1 coupon • 1st LED TV • 2nd Refrigerator • 3rd Microwave Oven',cliaShikhar:'8 new agents + activation/qualification conditions • 5 performance levels up to ₹1.25 lakh'};
+    const text={activeSep:'Level A: 30% activation • Level B: 35% • Level C: 40% (August 2026) • inactive-agent activation पर ₹200 each',uleap:'11 ULIP ₹5,000 → 21 ₹15,000 → 35 ₹35,000 → 51 ₹65,000 → 75 ₹1,00,000 → 101 ₹1,75,000',platinum:'5/7/10/15/21/31/41/51/75/101/125/150 NOP OR TFP milestones — Fan से Royal Enfield तक',gatewayPlatinum:'1 NOP ₹150 • 2 NOP ₹300 • 3 NOP ₹450',gatewayLuckyDraw:'17–22 Sep: 1 NOP = LIC बैग • 2 NOP = पैटर्न वाला बैग • 3 NOP = दोनों बैग • Min premium ULIP ₹4,000 / Non-ULIP ₹2,000 • 751 मान्य नहीं',bmoRecruit:'6% recruitment + activation = ₹5,000 per BMO • हर अतिरिक्त 1% = ₹2,500',aaaAgents:'12 / 50 / 100 Policies milestones • आगे हर 15 policies पर ₹1,500',biggerTeam:'2 recruited + activated agents = ₹4,000 • हर अतिरिक्त agent ₹2,000 • cap ₹1 lakh',missionPlatinum:'125 / 200 / 325 / 525 / 800 Policies OR NSP/FPI thresholds',missionPlatinumAgent:'50 / 75 / 125 / 200 / 300 Policies OR NSP/FPI thresholds',platinumNspBonanza:'NSP ₹5L/₹7L/₹12L/₹20L/₹30L/₹50L slabs; thereafter every ₹10L block',platinumLuckyDraw:'01–15 Sep: eligible policy पर 1 coupon • 1st LED TV • 2nd Refrigerator • 3rd Microwave Oven',cliaShikhar:'8 new agents + activation/qualification conditions • 5 performance levels up to ₹1.25 lakh'};
     const card=c=>{const dl=daysLeft(c.end,as),urgent=dl<=3;return `<div class="running-card ${urgent?'urgent':''}"><div class="running-card-head"><div class="running-card-main"><div class="comp-title">${esc2(c.name)}</div><div class="live-tag">● RUNNING</div><div class="days-attention ${urgent?'urgent-days':''}">⏳ शेष दिन: <strong>${dl}</strong></div><div class="card-window">📅 प्रतियोगिता अवधि: <b>${fmt(c.start)} – ${fmt(c.end)}</b></div>${urgent?'<div class="urgent-badge">⚠️ जल्दी समाप्त — अभी करें</div>':''}</div></div><div class="running-info"><b>${esc2(text[c.id]||'Competition की detailed conditions Posters में देखें।')}</b></div><div class="comp-quick-actions"><button type="button" class="comp-quick-btn poster" onclick="openCompetitionPoster('${c.id}')">🖼️ View Poster</button><button type="button" class="comp-quick-btn primary" onclick="openCompetitionMilestone('${c.id}')">🏆 Milestone</button></div></div>`};
     const rl=document.getElementById('runningList');if(rl)rl.innerHTML=list.length?list.map(card).join(''):'<div class="empty">आज कोई competition running नहीं है।</div>';
     const cs=document.getElementById('comingSoonWrap'),cl=document.getElementById('comingSoonList');if(upcoming.length){cs.style.display='block';cl.innerHTML=upcoming.map(c=>`<div class="coming-card"><div class="comp-title">${esc2(c.name)}</div><div class="live-tag coming-tag">● COMING SOON</div><div class="days-attention coming-days">⏳ शुरू होने में: <strong>${Math.ceil((dateObj(c.start)-dateObj(as))/86400000)} दिन</strong></div><div class="card-window">📅 प्रतियोगिता अवधि: <b>${fmt(c.start)} – ${fmt(c.end)}</b></div><div class="running-info"><b>${esc2(text[c.id]||'Competition की detailed conditions देखें।')}</b></div><div class="comp-quick-actions"><button type="button" class="comp-quick-btn poster" onclick="openCompetitionPoster('${c.id}')">🖼️ View Poster</button><button type="button" class="comp-quick-btn primary" onclick="openCompetitionMilestone('${c.id}')">🏆 Milestone</button></div></div>`).join('')}else{cs.style.display='none';cl.innerHTML=''}
@@ -1918,7 +1941,7 @@ setAgentDataSource('system');
   let lines = "";
   try { lines = await fetch("dates.txt").then(r=>r.text()); } catch(e){}
   const today = new Date();
-  const dh = d => d? new Date(d + "T00:00:00") < today : false;
+  const dh = d => d? new Date(d + "T23:59:59") < today : false;   // aakhri tareekh poore din dikhega
   const imgExp = {};
   for (const ln of lines.split("\n")){
     const m = ln.match(/^([^=\s]+)\s*=\s*(\d{4}-\d{2}-\d{2})\s*$/);
@@ -1936,6 +1959,54 @@ setAgentDataSource('system');
     const fn = (el.getAttribute("data-image")||"").toLowerCase();
     if (dh(imgExp[fn])) el.remove();
   });
+})();
+</script>
+<!-- ==========================================================================
+     ROLE LOCK — अभी सिर्फ AGENT सेक्शन चालू है
+     बाद में बाकी सेक्शन (DO / SBA / LICA, MARKETING OFFICIALS, CLIA) वापस चालू करने के लिए
+     नीचे VIJETA_ENABLED_ROLES में role जोड़ दो, जैसे:
+        ['agent','dos','marketing','clia']
+     सारा data / poster / rules फाइल में सुरक्षित है — सिर्फ दिखना बंद है।
+     ========================================================================== -->
+<script>
+(function(){
+  const VIJETA_ENABLED_ROLES=['agent'];            // <<< यहीं से lock / unlock करें
+  const ALL_ROLES=['agent','dos','marketing','clia'];
+  const ENABLED=ALL_ROLES.filter(r=>VIJETA_ENABLED_ROLES.includes(r));
+  const LOCKED=ALL_ROLES.filter(r=>!ENABLED.includes(r));
+  if(!LOCKED.length) return;                       // सब unlocked हैं तो कुछ नहीं करना
+  const FIRST=ENABLED[0]||'agent';
+  const ok=r=>ENABLED.includes(r);
+  const inputIds={agent:'agentInputFields',dos:'dosInputFields',marketing:'marketingInputFields',clia:'cliaInputFields'};
+
+  // 1) CSS: locked role के buttons + input forms छुपाओ
+  const css=LOCKED.map(r=>`.role-btn[data-role="${r}"],.poster[data-role="${r}"],#${inputIds[r]}{display:none!important}`).join('\n');
+  const st=document.createElement('style'); st.id='vijeta-role-lock-css'; st.textContent=css; document.head.appendChild(st);
+
+  // 2) Locked role के posters पेज से हटाओ (source HTML में सुरक्षित रहते हैं)
+  document.querySelectorAll('#posters .poster').forEach(p=>{
+    let r=p.dataset.role;
+    if(!r && typeof posterRoleFromCaption==='function'){r=posterRoleFromCaption((p.querySelector('img')?.alt||'')+' '+(p.querySelector('.cap')?.textContent||''));}
+    if(r && !ok(r)) p.remove();
+  });
+
+  // 3) Role हमेशा enabled role ही रहे
+  selectedRole=FIRST;
+  const wrap=(name,idx)=>{const f=window[name]; if(typeof f!=='function')return;
+    window[name]=function(){const a=[].slice.call(arguments); if(a[idx]!==undefined && !ok(a[idx])) a[idx]=FIRST; return f.apply(this,a);};};
+  wrap('setRole',0); wrap('showRoleFields',0); wrap('filterPosters',0); wrap('calculate',0);
+
+  // 4) सिर्फ एक role बचा हो तो "Role चुनें" वाला text सरल कर दो
+  if(ENABLED.length===1){
+    // एक ही role है तो "Role चुनें" वाले बटन-बार की ज़रूरत नहीं — जगह बचाओ
+    const s2=document.createElement('style'); s2.textContent='.role-workspace,#entryRoleSelector{display:none!important}'; document.head.appendChild(s2);
+    const n=document.querySelector('#entry > .note'); if(n) n.innerHTML='<b>यहाँ AGENT का data भरें।</b> हर Competition का data अलग भरें। <b>कोई data save नहीं होता।</b>';
+    const h=document.querySelector('#entry .section-title'); if(h) h.textContent='✍️ Agent — Data Entry';
+  }
+
+  // 5) पहला render agent के लिए
+  const boot=()=>{try{setRole(FIRST)}catch(e){} try{renderRunning()}catch(e){}};
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(boot,200)); else setTimeout(boot,200);
 })();
 </script>
 </body></html>

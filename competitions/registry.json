@@ -7,116 +7,123 @@
   },
   "competitions": [
     {
-      "id": "platinum",
-      "name": "PLATINUM DHAMAKA — Agent Business",
-      "endDate": "2026-09-30",
+      "id": "activeSep",
+      "name": "ACTIVE SEPTEMBER — NB Campaign (DO / SBA / LICA)",
+      "endDate": "2026-09-15",
       "poster": "images/i01.jpg",
-      "tcNote": "01–30 Sep 2026 | Total NOP, Total TFP"
+      "tcNote": "01–15 Sep 2026 | Activation % levels A/B/C"
+    },
+    {
+      "id": "bmoRecruit",
+      "name": "BMO — Agents Recruitment + Activation",
+      "endDate": "2026-09-30",
+      "poster": "images/i02.jpg",
+      "tcNote": "01 Jul–30 Sep 2026 | 6% recruitment + activation"
+    },
+    {
+      "id": "aaaAgents",
+      "name": "अभियान AAA — हमेशा सक्रिय एजेंट",
+      "endDate": "2027-03-31",
+      "poster": "images/i03.jpg",
+      "tcNote": "01 May 2026–31 Mar 2027 | 12 / 50 / 100 policies"
+    },
+    {
+      "id": "biggerTeam",
+      "name": "BIGGER TEAM — GREATER GAIN (DO / SBA)",
+      "endDate": "2026-09-30",
+      "poster": "images/i04.jpg",
+      "tcNote": "01 Jul–30 Sep 2026 | Recruit + activate agents"
+    },
+    {
+      "id": "missionPlatinum",
+      "name": "MISSION PLATINUM — Development Officers",
+      "endDate": "2026-09-30",
+      "poster": "images/i05.jpg",
+      "tcNote": "01 Aug–30 Sep 2026 | Policies / NSP / FPI levels"
+    },
+    {
+      "id": "cliaShikhar",
+      "name": "शिखर की ओर शिखर — CLIA / CO",
+      "endDate": "2027-03-31",
+      "poster": "images/i06.jpg",
+      "tcNote": "01 Apr 2026–31 Mar 2027 | NOP + WRP + FYPI"
+    },
+    {
+      "id": "bmoSpecial",
+      "name": "BMO's SPECIAL — NB Campaign (BMO)",
+      "endDate": "2026-09-22",
+      "poster": "images/i07.jpg",
+      "tcNote": "16–22 Sep 2026 | A2B / NOP"
+    },
+    {
+      "id": "activeSep2Do",
+      "name": "ACTIVE SEPTEMBER-2 — DO / SBA / LICA",
+      "endDate": "2026-09-30",
+      "poster": "images/i08.jpg",
+      "tcNote": "16–30 Sep 2026 | Activation levels A/B/C"
+    },
+    {
+      "id": "activeSep2Clia",
+      "name": "ACTIVE SEPTEMBER-2 — CLIA / CO",
+      "endDate": "2026-09-30",
+      "poster": "images/i09.jpg",
+      "tcNote": "16–30 Sep 2026 | Activation levels A/B/C"
+    },
+    {
+      "id": "platinumLuckyDraw",
+      "name": "प्लेटिनम धमाका — Special Attraction Lucky Draw",
+      "endDate": "2026-09-22",
+      "poster": "images/i10.jpg",
+      "tcNote": "01–22 Sep 2026 | 1 coupon per eligible policy"
     },
     {
       "id": "missionPlatinumAgent",
-      "name": "MISSION PLATINUM — Agent Campaign",
+      "name": "MISSION PLATINUM — Agents",
       "endDate": "2026-09-30",
-      "poster": "images/i02.jpg",
-      "tcNote": "01 Aug–30 Sep 2026"
+      "poster": "images/i11.jpg",
+      "tcNote": "01 Aug–30 Sep 2026 | Policies / NSP / FPI"
     },
     {
       "id": "platinumNspBonanza",
-      "name": "PLATINUM NSP BONANZA",
+      "name": "PLATINUM NSP BONANZA — Agents",
       "endDate": "2026-09-30",
-      "poster": "images/i03.jpg",
-      "tcNote": "Qualifying NSP slabs"
+      "poster": "images/i12.jpg",
+      "tcNote": "Extended up to 30 Sep 2026 | NSP slabs"
+    },
+    {
+      "id": "uleap",
+      "name": "U-LEAP — ULIP Campaign (Agents)",
+      "endDate": "2026-09-30",
+      "poster": "images/i13.jpg",
+      "tcNote": "01–30 Sep 2026 | ULIP policies + eNACH"
+    },
+    {
+      "id": "platinum",
+      "name": "प्लेटिनम धमाका — Agents",
+      "endDate": "2026-09-30",
+      "poster": "images/i14.jpg",
+      "tcNote": "01–30 Sep 2026 | Total NOP / TFP"
     },
     {
       "id": "picnic",
       "name": "पॉलिसी करें, पिकनिक चलें",
       "endDate": "2026-09-11",
-      "poster": "images/i04.jpg",
-      "tcNote": "02–11 Sep 2026 NOP"
+      "poster": "images/i15.jpg",
+      "tcNote": "02–11 Sep 2026 | NOP"
     },
     {
       "id": "gatewayPlatinum",
-      "name": "GATEWAY TO PURI",
-      "endDate": "2026-08-31",
-      "poster": "images/i05.jpg",
-      "tcNote": "August 2026 | gateway NOP"
-    },
-    {
-      "id": "platinumLuckyDraw",
-      "name": "PLATINUM LUCKY DRAW",
-      "endDate": "2026-09-30",
-      "poster": "images/i06.jpg",
-      "tcNote": "Sep lucky draw qualification"
-    },
-    {
-      "id": "aaaAgents",
-      "name": "AAA — Active Agent Award",
-      "endDate": "2027-03-31",
-      "poster": "images/i07.jpg",
-      "tcNote": "01 Sep 2026–31 Mar 2027 | NOP + WRP + FYPI"
-    },
-    {
-      "id": "uleap",
-      "name": "U-LEAP — ULIP Eligibility & Data",
-      "endDate": "2026-09-30",
-      "poster": "images/i08.jpg",
-      "tcNote": "01–30 Sep 2026 | ULIP eNACH"
-    },
-    {
-      "id": "activeSep",
-      "name": "ACTIVE SEPTEMBER — NB Campaign (DO)",
-      "endDate": "2026-09-30",
-      "poster": "images/i09.jpg",
-      "tcNote": "Activation % on 31-08-2026 strength"
-    },
-    {
-      "id": "activeSep2Do",
-      "name": "ACTIVE SEPTEMBER 2.0 — DO Ladder",
-      "endDate": "2026-09-30",
-      "poster": "images/i10.jpg",
-      "tcNote": "Higher activation targets"
-    },
-    {
-      "id": "biggerTeam",
-      "name": "BIGGER TEAM — Recruit + Activate",
-      "endDate": "2026-10-31",
-      "poster": "images/i11.jpg",
-      "tcNote": "Recruitment + Activation targets"
-    },
-    {
-      "id": "missionPlatinum",
-      "name": "MISSION PLATINUM — DO/SBA Campaign",
-      "endDate": "2026-09-30",
-      "poster": "images/i12.jpg",
-      "tcNote": "DO/SBA/LICA Policy, NSP, FPI"
-    },
-    {
-      "id": "bmoRecruit",
-      "name": "BMO — Recruitment + Activation",
-      "endDate": "2026-10-31",
-      "poster": "images/i13.jpg",
-      "tcNote": "BMO 6–15% strength"
-    },
-    {
-      "id": "bmoSpecial",
-      "name": "BMO SPECIAL — A2B / NOP",
-      "endDate": "2026-09-30",
-      "poster": "images/i14.jpg",
-      "tcNote": "BMO A2B / NOP combo"
-    },
-    {
-      "id": "cliaShikhar",
-      "name": "CLIA SHIKHAR — NOP + WRP + FYPI",
-      "endDate": "2027-03-31",
-      "poster": "images/i15.jpg",
-      "tcNote": "CLIA combined milestone"
-    },
-    {
-      "id": "activeSep2Clia",
-      "name": "ACTIVE SEPTEMBER 2.0 — CLIA Ladder",
-      "endDate": "2026-09-30",
+      "name": "GATEWAY TO प्लेटिनम धमाका",
+      "endDate": "2026-09-15",
       "poster": "images/i16.jpg",
-      "tcNote": "CLIA activation 2.0"
+      "tcNote": "12–15 Sep 2026 | 1/2/3 NOP"
+    },
+    {
+      "id": "gatewayLuckyDraw",
+      "name": "GATEWAY TO LUCKY DRAW — Agent",
+      "endDate": "2026-09-22",
+      "poster": "images/i17.jpg",
+      "tcNote": "17–22 Sep 2026 | 1 NOP LIC bag, 2 NOP pattern bag, 3 NOP both"
     }
   ]
 }

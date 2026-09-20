@@ -1,16 +1,29 @@
-# Vijay Wings ki all competitions ki khatam date
-# Format: image-name-without-folder = YYYY-MM-DD
-# Jo date aaj (19-09-2026) se pehle ki hai, woh poster + T&C page se gayab ho jayega
+# Vijeta Wings — sabhi competitions / posters ki aakhri (khatam hone ki) tareekh
+# Format:  image-file-ka-naam = YYYY-MM-DD
+# Jis din tak competition chalti hai, poster us poore din dikhega; agle din se gayab ho jayega.
+# Naya poster jodne par yahan ek nayi line neeche jod dena.
 
-# Aaj ki competition (abhi dikh rahi hain)
-image04.jpg = 2026-09-30
-image11.jpg = 2026-10-31
-image12.jpg = 2026-09-30
-image13.jpg = 2026-10-31
-image14.jpg = 2026-09-30
-image08.jpg = 2026-09-30
-image07.jpg = 2027-03-31
-image09.jpg = 2026-09-30
-image10.jpg = 2026-09-30
-image15.jpg = 2027-03-31
-image16.jpg = 2026-09-30
+# ---- Agent ----
+i03.jpg = 2027-03-31
+i10.jpg = 2026-09-22
+i11.jpg = 2026-09-30
+i12.jpg = 2026-09-30
+i13.jpg = 2026-09-30
+i14.jpg = 2026-09-30
+i15.jpg = 2026-09-11
+i16.jpg = 2026-09-15
+i17.jpg = 2026-09-22
+
+# ---- DO / SBA / LICA (abhi hidden) ----
+i01.jpg = 2026-09-15
+i04.jpg = 2026-09-30
+i05.jpg = 2026-09-30
+i08.jpg = 2026-09-30
+
+# ---- Marketing Officials / BMO (abhi hidden) ----
+i02.jpg = 2026-09-30
+i07.jpg = 2026-09-22
+
+# ---- CLIA / CO (abhi hidden) ----
+i06.jpg = 2027-03-31
+i09.jpg = 2026-09-30
