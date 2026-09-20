@@ -1,0 +1,14 @@
+{
+  "name": "vijeta-wings",
+  "version": "1.0.0",
+  "description": "Vijeta Wings — LIC competitions & milestone calculator (static site)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
