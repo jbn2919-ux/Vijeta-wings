@@ -1827,15 +1827,16 @@ document.addEventListener('DOMContentLoaded',()=>{
 .agent-ds-btn.manual{border-color:#a86f00;color:#7a5a00}
 .agent-ds-btn.manual.active{background:#a86f00;color:#fff}
 #systemDataPanel{margin-top:12px}
-.sys-code-row{display:flex;gap:8px}
-.sys-code-row input{flex:1;font-size:20px;border:1px solid #c8d3e2;border-radius:10px;padding:12px;min-height:50px;text-transform:uppercase;font-weight:800}
+.sys-code-row{display:flex;gap:8px;align-items:center;max-width:100%}
+.sys-code-row button{flex:0 0 auto;min-width:64px}
+.sys-code-row input{flex:1 1 0;min-width:0;width:100%;box-sizing:border-box;font-size:20px;border:1px solid #c8d3e2;border-radius:10px;padding:12px;min-height:50px;text-transform:uppercase;font-weight:800}
 .sys-status{margin-top:10px;font-size:17px;font-weight:800;line-height:1.5}
 .sys-sum-card{margin-top:10px;background:#fff;border:2px solid #b9cce8;border-radius:13px;padding:13px}
 .sys-sum-name{font-size:20px;font-weight:950;color:var(--blue)}
 .sys-sum-name span{color:var(--muted);font-size:16px}
 .sys-sum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
-.sys-sum-grid div{background:#f4f7fb;border:1px solid #d8e1ee;border-radius:10px;padding:9px;text-align:center}
-.sys-sum-grid b{display:block;font-size:22px}
+.sys-sum-grid div{min-width:0;background:#f4f7fb;border:1px solid #d8e1ee;border-radius:10px;padding:9px;text-align:center}
+.sys-sum-grid b{display:block;font-size:16px;white-space:nowrap}
 .sys-sum-grid span{font-size:14px;font-weight:800;color:var(--muted)}
 .sys-sum-note{margin-top:9px;font-size:14px;color:var(--muted);line-height:1.45}
 .sys-updated{margin-top:9px;font-size:15px;font-weight:800;color:#7a5a00;background:#fff9df;border:1px solid var(--yellow);border-radius:9px;padding:8px 10px}
@@ -2008,5 +2009,9 @@ setAgentDataSource('system');
   const boot=()=>{try{setRole(FIRST)}catch(e){} try{renderRunning()}catch(e){}};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(boot,200)); else setTimeout(boot,200);
 })();
+</script>
+<script>
+/* Agent Code box में Enter दबाने पर भी System Data आ जाए */
+(function(){var i=document.getElementById('agentCodeInput');if(i)i.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();try{fetchAgentSystemData()}catch(x){}}});})();
 </script>
 </body></html>
