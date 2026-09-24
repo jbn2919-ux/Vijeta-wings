@@ -127,7 +127,8 @@
   text-align:center !important;
 }
 
-.role-selector{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 15px}.role-btn{background:#fff;border:2px solid #cbd7e8;color:var(--blue);padding:11px 8px;font-size:16px;font-weight:950;border-radius:11px}.role-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}.role-empty{background:#fff9df;border:2px dashed var(--yellow);border-radius:15px;padding:18px;font-size:19px;font-weight:850;line-height:1.55}.total-required{margin-top:10px;background:#eef5ff;border:2px solid #b9cce8;border-radius:10px;padding:10px 12px;font-size:19px;font-weight:950;line-height:1.45}.remaining-required{margin-top:8px;background:#fff3b8;border:2px solid #e1b800;border-radius:10px;padding:10px 12px;font-size:20px;font-weight:950;line-height:1.45}.rung.done .remaining-required{background:#e9f7ee;border-color:#8cc69a}.bonus-below{margin-top:28px;display:block;clear:both}.bonus-ladder{display:block;clear:both}.bonusMilestonesWrap{display:block;clear:both;margin-bottom:24px}@media(max-width:760px){.role-selector{grid-template-columns:1fr 1fr}.role-btn{font-size:15px}}
+.role-selector{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 15px}.role-btn{background:#fff;border:2px solid #cbd7e8;color:var(--blue);padding:11px 8px;font-size:16px;font-weight:950;border-radius:11px}.role-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}.role-empty{background:#fff9df;border:2px dashed var(--yellow);border-radius:15px;padding:18px;font-size:19px;font-weight:850;line-height:1.55}.total-required{margin-top:10px;background:#eef5ff;border:2px solid #b9cce8;border-radius:10px;padding:10px 12px;font-size:19px;font-weight:950;line-height:1.45}.remaining-required{margin-top:8px;background:#fff3b8;border:2px solid #e1b800;border-radius:10px;padding:10px 12px;font-size:20px;font-weight:950;line-height:1.45}
+.progress-so-far{margin-top:8px;background:#f7f9fc;border:1px solid #d8e1ee;border-radius:10px;padding:9px 12px;font-size:18px;font-weight:900;line-height:1.45}.rung.done .remaining-required{background:#e9f7ee;border-color:#8cc69a}.bonus-below{margin-top:28px;display:block;clear:both}.bonus-ladder{display:block;clear:both}.bonusMilestonesWrap{display:block;clear:both;margin-bottom:24px}@media(max-width:760px){.role-selector{grid-template-columns:1fr 1fr}.role-btn{font-size:15px}}
 /* ===== VIJETA ROLE-WISE DATA INPUT ===== */
 .entry-role-selector{margin:12px 0 14px}
 .role-input-title{
@@ -381,6 +382,11 @@ html,body{max-width:100%;overflow-x:hidden}
 <div class="field"><label>17–22 Sep की NOP (Gateway to Lucky Draw)</label><input type="number" id="glNop" min="0" value="0"><small>1 NOP = LIC बैग • 2 NOP = पैटर्न वाला बैग • 3 NOP = दोनों बैग। Minimum Premium: ULIP ₹4,000 / Non-ULIP ₹2,000। जन सुरक्षा (HLY/YLY) मान्य, बशर्ते premium कम-से-कम ₹2,000 हो। 751 (Micro Bachat) मान्य नहीं।</small></div>
 </div><div class="small-note"><b>Poster:</b> 17.09.2026 – 22.09.2026 • 3 से ऊपर की policies पर अभिकर्ता जोनल ऑफिस की प्लेटिनम धमाका प्रतियोगिता के लिए qualify करेंगे।</div></div>
 
+<div class="group" data-comp="gatewayPlatinum2"><h4>🔟 GATEWAY TO प्लेटिनम धमाका - 2 — Agent Data</h4>
+<div class="formgrid">
+<div class="field"><label>23–30 Sep की NOP (Gateway to प्लेटिनम धमाका - 2)</label><input type="number" id="gp2Nop" min="0" value="0"><small>1 NOP = 2× 9W Bajaj LED Bulb • 2 NOP = 5× 9W Bajaj LED Bulb • 3 NOP = 1× Bajaj Iron। Minimum Premium: ULIP ₹4,000 / Non-ULIP ₹2,000। Table No. 751 इस प्रतियोगिता में मान्य नहीं।</small></div>
+</div><div class="small-note"><b>Poster:</b> 23.09.2026 – 30.09.2026 • इसके ऊपर पॉलिसी करने वाले अभिकर्ता जोनल ऑफिस के प्लेटिनम धमाका प्रतियोगिता के लिए qualify करेंगे।</div></div>
+
 </div>
 <div class="combined-summary" id="agentCombinedSummary" style="margin-top:14px"></div>
 <div class="agent-basis-wrap" id="agentBasisWrap">
@@ -393,6 +399,13 @@ html,body{max-width:100%;overflow-x:hidden}
     <option value="both">🚀 Both Basis — NOP + Premium दोनों</option>
   </select>
   <div class="basis-pending" id="basisPending">ऊपर से Basis चुनें — फिर आपका अगला Milestone दिखेगा।</div>
+  <div class="agent-basis-title" style="margin-top:16px">👥 क्या आप <b>अभियान AAA</b> एजेंट हैं?</div>
+  <div class="agent-basis-help">सिर्फ हाँ चुनने पर ही Combined Milestone में AAA से जुड़े milestones दिखेंगे — बाकी सबके लिए ये अपने-आप छुपे रहेंगे।</div>
+  <select id="aaaEligibleToggle" class="agent-basis-select">
+    <option value="">— पहले चुनें —</option>
+    <option value="yes">✅ हाँ, मैं AAA Agent हूँ</option>
+    <option value="no">🚫 नहीं</option>
+  </select>
 </div>
 </div>
 
@@ -521,6 +534,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <div class="poster" data-role="clia" data-comp="activeSep2Clia"><img src="images/i09.jpg" alt="ACTIVE SEPTEMBER-2 — NB Campaign for CLIAs / COs (16-09-2026 to 30-09-2026)" loading="lazy" decoding="async"><div class="cap">ACTIVE SEPTEMBER-2 — NB Campaign for CLIAs / COs (16-09-2026 to 30-09-2026)</div></div>
 <div class="poster" data-role="agent" data-comp="platinumLuckyDraw"><img src="images/i10.jpg" alt="प्लेटिनम धमाका — Lucky Draw अवधि विस्तार, अंतिम तिथि 22-09-2026 (बेगूसराय मंडल)" loading="lazy" decoding="async"><div class="cap">प्लेटिनम धमाका — Lucky Draw अंतिम तिथि 22-09-2026 तक बढ़ी (बेगूसराय मंडल)</div></div>
 <div class="poster" data-role="agent" data-comp="gatewayLuckyDraw"><img src="images/i17.jpg" alt="Gateway to Lucky Draw — 17.09.2026 to 22.09.2026" loading="lazy" decoding="async"><div class="cap">गेट-वे-टू लकी ड्रॉ — Gateway to Lucky Draw (17-09-2026 to 22-09-2026) — Agent</div></div>
+<div class="poster" data-role="agent" data-comp="gatewayPlatinum2"><img src="images/i18.jpg" alt="GATEWAY TO प्लेटिनम धमाका - 2 — 23.09.2026 to 30.09.2026" loading="lazy" decoding="async"><div class="cap">GATEWAY TO प्लेटिनम धमाका - 2 (23-09-2026 to 30-09-2026) — Agent</div></div>
     </div>
     <div class="section-title">🖼️ Source Posters</div>
     <div class="poster-grid">
@@ -541,6 +555,7 @@ const baseComps=[
 {id:'picnic',name:'पॉलिसी करें, पिकनिक चलें',start:'2026-09-02',end:'2026-09-11',roles:['agent']},
 {id:'gatewayPlatinum',name:'Gateway to प्लेटिनम धमाका',start:'2026-09-12',end:'2026-09-15',roles:['agent']},
 {id:'gatewayLuckyDraw',name:'गेट-वे-टू लकी ड्रॉ — Gateway to Lucky Draw',start:'2026-09-17',end:'2026-09-22',roles:['agent']},
+{id:'gatewayPlatinum2',name:'GATEWAY TO प्लेटिनम धमाका - 2',start:'2026-09-23',end:'2026-09-30',roles:['agent']},
 {id:'bmoRecruit',name:'Agents Recruitment & Activation Campaign — BMO',start:'2026-07-01',end:'2026-09-30',roles:['marketing']},
 {id:'aaaAgents',name:'अभियान AAA — हमेशा सक्रिय एजेंट',start:'2026-05-01',end:'2027-03-31',roles:['agent']},
 {id:'biggerTeam',name:'BIGGER TEAM — GREATER GAIN',start:'2026-07-01',end:'2026-09-30',roles:['dos']},
@@ -715,7 +730,7 @@ function agentOverlapSafeBusiness(){
  // Therefore we use the largest comparable NOP total among the overlapping
  // monthly/September views instead of summing them. AAA is excluded from this
  // monthly combined count because its campaign period/definition is different.
- const nopViews=[v('pdNop'),v('mpaPolicies'),v('gatewayNop'),v('glNop'),v('picnicNop'),v('luckyDrawNop'),v('ulip')];
+ const nopViews=[v('pdNop'),v('mpaPolicies'),v('gatewayNop'),v('glNop'),v('gp2Nop'),v('picnicNop'),v('luckyDrawNop'),v('ulip')];
  const uniqueNop=Math.max(0,...nopViews);
  // Premium measures are not interchangeable (TFP/FPI/NSP can overlap), so
  // never add them together. Show the largest comparable entered measure and
@@ -910,7 +925,7 @@ function calcLuckyDraw(){
  const n=v('luckyDrawNop'); return{n,coupons:n};
 }
 
-const ENTRY_FIELDS={platinum:['pdNop','pdTfp'],missionPlatinumAgent:['mpaPolicies','mpaNsp','mpaFpi'],platinumNspBonanza:['pnbNsp'],picnic:['picnicNop'],gatewayPlatinum:['gatewayNop'],gatewayLuckyDraw:['glNop'],platinumLuckyDraw:['luckyDrawNop'],aaaAgents:['aaaNop','aaaWrp','aaaFypi','aaaFirstPremium'],uleap:['ulip','invalidUlip'],activeSep:['dosAgencyStrength','dosActiveAgents','dosAugActive','dosInactiveActivated'],biggerTeam:['btRecruited','btActivated'],missionPlatinum:['mpPolicies','mpNsp','mpFpi'],bmoRecruit:['bmoStrength','bmoRecruited','bmoActivated'],bmoSpecial:['bmoSpA2b','bmoSpNop'],cliaShikhar:['cliaRecruited','cliaActivated','cliaNop','cliaWrp','cliaFypi'],activeSep2Do:['as2dStrength','as2dActive','as2dEarly','as2dInactive'],activeSep2Clia:['as2cStrength','as2cActive','as2cEarly','as2cInactive']};
+const ENTRY_FIELDS={platinum:['pdNop','pdTfp'],missionPlatinumAgent:['mpaPolicies','mpaNsp','mpaFpi'],platinumNspBonanza:['pnbNsp'],picnic:['picnicNop'],gatewayPlatinum:['gatewayNop'],gatewayLuckyDraw:['glNop'],gatewayPlatinum2:['gp2Nop'],platinumLuckyDraw:['luckyDrawNop'],aaaAgents:['aaaNop','aaaWrp','aaaFypi','aaaFirstPremium'],uleap:['ulip','invalidUlip'],activeSep:['dosAgencyStrength','dosActiveAgents','dosAugActive','dosInactiveActivated'],biggerTeam:['btRecruited','btActivated'],missionPlatinum:['mpPolicies','mpNsp','mpFpi'],bmoRecruit:['bmoStrength','bmoRecruited','bmoActivated'],bmoSpecial:['bmoSpA2b','bmoSpNop'],cliaShikhar:['cliaRecruited','cliaActivated','cliaNop','cliaWrp','cliaFypi'],activeSep2Do:['as2dStrength','as2dActive','as2dEarly','as2dInactive'],activeSep2Clia:['as2cStrength','as2cActive','as2cEarly','as2cInactive']};
 function compHasEntry(id){const fs=ENTRY_FIELDS[id];if(!fs)return true;return fs.some(x=>{const e=document.getElementById(x);if(!e)return false;if(e.type==='number')return Number(e.value)>0;return e.value==='yes'})}
 function getAgentBasis(){return document.getElementById('agentBasis')?.value||'';}
 function buildCombinedBlocks(ctx){
@@ -940,7 +955,7 @@ function buildCombinedBlocks(ctx){
        else{done=rN<=0||rT<=0;nOut=rN;tOut=rT;sortKey=tN;needText=rN+' NOP OR ₹'+L2(rT)+' लाख Premium';}
      }
      if(!eligOk){done=false;needText=needText+' + eligibility शर्त: '+(eligNote||'');}
-     rows.push({title,prize:benefit,done,needNop:nOut,needPrem:tOut,days,total:shownTotal,need:done?'पूरा ✓':needText,benefits:benefit,compId,kind,sortKey});
+     rows.push({title,prize:benefit,done,needNop:nOut,needPrem:tOut,days,total:shownTotal,need:done?'पूरा ✓':needText,benefits:benefit,compId,kind,sortKey,achNop:achN,achPrem:achT});
    };
    // 1) Short-window quick wins — अपनी अपनी अवधि की entered NOP पर
    add('1 Policy — पिकनिक Quick Win','1 NOP (02–11 Sep)',1,0,picN,0,daysLeft('2026-09-11',as),'पॉलिसी करें, पिकनिक चलें — ₹150','picnic','nop');
@@ -952,6 +967,10 @@ function buildCombinedBlocks(ctx){
     add('1 Gateway Lucky Draw Policy — Quick Win','1 NOP (17–22 Sep)',1,0,glN,0,daysLeft('2026-09-22',as),'Gateway to Lucky Draw — LIC बैग','gatewayLuckyDraw','nop');
     add('2 Gateway Lucky Draw Policies — Quick Win','2 NOP (17–22 Sep)',2,0,glN,0,daysLeft('2026-09-22',as),'Gateway to Lucky Draw — पैटर्न वाला बैग','gatewayLuckyDraw','nop');
     add('3 Gateway Lucky Draw Policies — Quick Win','3 NOP (17–22 Sep)',3,0,glN,0,daysLeft('2026-09-22',as),'Gateway to Lucky Draw — दोनों बैग (LIC बैग + पैटर्न वाला बैग)','gatewayLuckyDraw','nop');
+    const gp2N=v('gp2Nop');
+    add('1 Gateway-2 Policy — Quick Win','1 NOP (23–30 Sep)',1,0,gp2N,0,daysLeft('2026-09-30',as),'Gateway to प्लेटिनम धमाका - 2 — 2× 9W Bajaj LED Bulb','gatewayPlatinum2','nop');
+    add('2 Gateway-2 Policies — Quick Win','2 NOP (23–30 Sep)',2,0,gp2N,0,daysLeft('2026-09-30',as),'Gateway to प्लेटिनम धमाका - 2 — 5× 9W Bajaj LED Bulb','gatewayPlatinum2','nop');
+    add('3 Gateway-2 Policies — Quick Win','3 NOP (23–30 Sep)',3,0,gp2N,0,daysLeft('2026-09-30',as),'Gateway to प्लेटिनम धमाका - 2 — 1× Bajaj Iron','gatewayPlatinum2','nop');
    // 2) प्लेटिनम धमाका — 01–30 Sep की entered NOP/TFP पर (Multipurpose Fan से Royal Enfield तक)
    platinum.forEach(x=>{add(`${x[0]} NOP OR ₹${x[1]} लाख TFP`,`${x[0]} NOP OR ₹${x[1]} लाख TFP (01–30 Sep)`,x[0],x[1],pdN,pdT,daysLeft('2026-09-30',as),'प्लेटिनम धमाका — '+x[2],'platinum','both');});
    // 3) MISSION PLATINUM — Agent Campaign (01 Aug–30 Sep) — Policies / NSP / FPI routes
@@ -961,15 +980,18 @@ function buildCombinedBlocks(ctx){
      if(basis==='nop'){done=rP<=0;nOut=rP;shownTotal=`${x[0]} Policies (01 Aug–30 Sep)`;needText=rP+' Policies और';sortKey=x[0];}
      else if(basis==='premium'){const rT=Math.min(rNsp,rFpi);done=rT<=0;tOut=rT;shownTotal=`₹${x[1]} लाख NSP OR ₹${x[2]} लाख FPI`;needText='₹'+L2(rT)+' लाख NSP/FPI और';sortKey=Math.min(x[1],x[2]);}
      else{done=rP<=0||rNsp<=0||rFpi<=0;nOut=rP;tOut=Math.min(rNsp,rFpi);shownTotal=`${x[0]} Policies OR ₹${x[1]} लाख NSP OR ₹${x[2]} लाख FPI`;needText=`${rP} Policies OR ₹${L2(rNsp)} लाख NSP OR ₹${L2(rFpi)} लाख FPI`;sortKey=x[0];}
-     rows.push({title:`MISSION PLATINUM (Agent) Level ${i+1}`,prize:x[3],done,needNop:nOut,needPrem:tOut,days:daysLeft('2026-09-30',as),total:shownTotal,need:done?'पूरा ✓':needText,benefits:'MISSION PLATINUM (Agent) — '+x[3],compId:'missionPlatinumAgent',kind:'both',sortKey});
+     rows.push({title:`MISSION PLATINUM (Agent) Level ${i+1}`,prize:x[3],done,needNop:nOut,needPrem:tOut,days:daysLeft('2026-09-30',as),total:shownTotal,need:done?'पूरा ✓':needText,benefits:'MISSION PLATINUM (Agent) — '+x[3],compId:'missionPlatinumAgent',kind:'both',sortKey,achNop:mpaP,achPrem:mpaN});
    });
    // 4) PLATINUM NSP BONANZA — entered qualifying NSP पर
    platinumNspBonanza.forEach(x=>{add(`₹${x[0]} लाख NSP`,`₹${x[0]} लाख NSP (16 Aug–30 Sep)`,0,x[0],0,pnb,daysLeft('2026-09-30',as),'PLATINUM NSP BONANZA — '+money(x[1]),'platinumNspBonanza','premium');});
-   if(pnb>=50&&compIsUsable('platinumNspBonanza',as)&&compHasEntry('platinumNspBonanza')&&(basis==='premium'||basis==='both')) rows.push({title:'हर अतिरिक्त ₹10 लाख NSP Block',prize:'₹60,000 प्रति block',done:false,needNop:0,needPrem:10,days:daysLeft('2026-09-30',as),total:'₹50 लाख NSP के बाद हर अतिरिक्त ₹10 लाख NSP',need:'₹10 लाख NSP और',benefits:'PLATINUM NSP BONANZA — ₹60,000 प्रति block',compId:'platinumNspBonanza',kind:'premium',sortKey:60});
+   if(pnb>=50&&compIsUsable('platinumNspBonanza',as)&&compHasEntry('platinumNspBonanza')&&(basis==='premium'||basis==='both')) rows.push({title:'हर अतिरिक्त ₹10 लाख NSP Block',prize:'₹60,000 प्रति block',done:false,needNop:0,needPrem:10,days:daysLeft('2026-09-30',as),total:'₹50 लाख NSP के बाद हर अतिरिक्त ₹10 लाख NSP',need:'₹10 लाख NSP और',benefits:'PLATINUM NSP BONANZA — ₹60,000 प्रति block',compId:'platinumNspBonanza',kind:'premium',sortKey:60,achNop:0,achPrem:pnb});
    // 5) U-LEAP — eligible ULIP policies पर (Pre-validated eNACH + Appointment Letter जरूरी)
    uleap.forEach(x=>{add(`${x[0]} Eligible ULIP Policies`,`${x[0]} Eligible ULIP Policies (01–30 Sep)`,x[0],0,uValid,0,daysLeft('2026-09-30',as),'U-LEAP — '+money(x[1]),'uleap','nop',uOk,'Pre-validated eNACH + Valid Appointment Letter');});
-   // 6) अभियान AAA — entered AAA policies पर (eligibility conditions सहित)
-   [[12,'Divisional Level Convention'],[50,'₹4,000 Cash + Divisional Level Convention'],[100,'₹9,000 Cash + Divisional Level Convention']].forEach(x=>{add(`अभियान AAA — ${x[0]} Policies`,`${x[0]} Policies (अभियान अवधि, 31-03-2027 तक)`,x[0],0,aaaN,0,daysLeft('2027-03-31',as),'अभियान AAA — '+x[1],'aaaAgents','nop',aaaOk,'हर महीने ≥1 Active Policy + ₹60,000 पात्र First-Year Premium');});
+   // 6) अभियान AAA — सिर्फ तभी, जब एजेंट ने बताया हो कि वह AAA अभियान का हिस्सा है
+   const aaaSelected=document.getElementById('aaaEligibleToggle')?.value==='yes';
+   if(aaaSelected){
+    [[12,'Divisional Level Convention'],[50,'₹4,000 Cash + Divisional Level Convention'],[100,'₹9,000 Cash + Divisional Level Convention']].forEach(x=>{add(`अभियान AAA — ${x[0]} Policies`,`${x[0]} Policies (अभियान अवधि, 31-03-2027 तक)`,x[0],0,aaaN,0,daysLeft('2027-03-31',as),'अभियान AAA — '+x[1],'aaaAgents','nop',aaaOk,'हर महीने ≥1 Active Policy + ₹60,000 पात्र First-Year Premium');});
+   }
    // एक ही क्रमिक सीढ़ी — छोटे target से बड़े target तक; पूरा हुआ milestone हमेशा QUALIFIED दिखेगा
    rows.sort((a,b)=>a.sortKey-b.sortKey);
    blocks.push({name:`VIJETA SMART MILESTONE — AGENT • ${basis==='nop'?'NOP BASIS':basis==='premium'?'PREMIUM BASIS':'NOP + PREMIUM BASIS'}`,rows,noGate:true});
@@ -1031,7 +1053,7 @@ function calculate(role){
  updateTotal();
  const as=todayISO(),L=calcLaunch(),D=calcDos(),A=calcActiveSep(),U=calcUleap(),P=calcPlatinum(),Pic=calcPicnic(),bonus=getUleapBonus(U.valid,U.eligible,as);
  const AAA=calcAAA(),BMO=calcBMORecruit(),BT=calcBiggerTeam(),MP=calcMission(),CL=calcCLIA(),MPA=calcMissionAgent(),PNB=calcPlatinumNspBonanza(),LD=calcLuckyDraw(),BS=calcBmoSpecial(),A2D=calcActiveSep2Do(),A2C=calcActiveSep2Clia();
- const cashNow=selectedRole==='agent'?(U.reward+(P.reached>=0?0:0)+(Pic.n===1?150:Pic.n===2?300:0)+(AAA.level>=2?(AAA.level===3?9000:4000):0)):
+ const cashNow=selectedRole==='agent'?(U.reward+(P.reached>=0?0:0)+(Pic.n===1?150:Pic.n===2?300:0)+((document.getElementById('aaaEligibleToggle')?.value==='yes'&&AAA.level>=2)?(AAA.level===3?9000:4000):0)):
  selectedRole==='dos'?(A.total+BT.reward+(MP.reached>=0?[7500,15000,30000,60000,120000][MP.reached]:0)+A2D.total):
  selectedRole==='marketing'?(BMO.reward+BS.reward):
  selectedRole==='clia'?((CL.reached>=0?[15000,5000,10000,70000,125000][CL.reached]:0)+A2C.total):0;
@@ -1049,13 +1071,19 @@ function calculate(role){
     else if(glN2>=2)won.push({name:'GATEWAY TO LUCKY DRAW — 2 NOP',prize:'पैटर्न वाला बैग',note:'17–22 Sep की 2 NOP • केवल highest slab'});
     else if(glN2>=1)won.push({name:'GATEWAY TO LUCKY DRAW — 1 NOP',prize:'LIC बैग',note:'17–22 Sep की 1 NOP'});
    }
+   const gp2N2=v('gp2Nop');
+   if(!compIsClosed('gatewayPlatinum2',as)){
+    if(gp2N2>=3)won.push({name:'GATEWAY TO प्लेटिनम धमाका - 2 — 3 NOP',prize:'1× Bajaj Iron',note:'23–30 Sep की '+gp2N2+' NOP • केवल highest slab'});
+    else if(gp2N2>=2)won.push({name:'GATEWAY TO प्लेटिनम धमाका - 2 — 2 NOP',prize:'5× 9W Bajaj LED Bulb',note:'23–30 Sep की 2 NOP • केवल highest slab'});
+    else if(gp2N2>=1)won.push({name:'GATEWAY TO प्लेटिनम धमाका - 2 — 1 NOP',prize:'2× 9W Bajaj LED Bulb',note:'23–30 Sep की 1 NOP'});
+   }
    if(MPA.reached>=0)won.push({name:'MISSION PLATINUM (Agent) — Level '+(MPA.reached+1),prize:missionPlatinumAgent[MPA.reached][3],note:v('mpaPolicies')+' Policies / ₹'+v('mpaNsp')+' lakh NSP / ₹'+v('mpaFpi')+' lakh FPI • केवल highest level'});
    if(PNB.reached>=0)won.push({name:'PLATINUM NSP BONANZA — ₹'+platinumNspBonanza[PNB.reached][0]+' लाख NSP slab',prize:money(PNB.reward),note:'₹'+PNB.nsp+' lakh qualifying NSP • केवल highest slab'});
    if(LD.n>0)won.push({name:'प्लेटिनम धमाका — Lucky Draw Coupons',prize:LD.coupons+' Coupon'+(LD.coupons>1?'s':''),note:'हर eligible policy पर 1 coupon (cumulative) — अंतिम तिथि 22-09-2026 • 1st LED TV • 2nd Refrigerator • 3rd Microwave'});
    if(P.reached>=0)won.push({name:'प्लेटिनम धमाका — Level '+(P.reached+1),prize:platinum[P.reached][2],note:'Total NOP '+P.n+' OR TFP ₹'+P.t+' लाख'});
    if(Pic.n>0)won.push({name:'पॉलिसी करें, पिकनिक चलें',prize:Pic.reward+(Pic.kettle?' + Electric Kettle':''),note:Pic.n+' NOP in 02–11 Sep period'});
-   if(AAA.level>=1){const aaaT=[['अभियान AAA — Level I','Divisional Level Convention','12 Policies'],['अभियान AAA — Level II','₹4,000 Cash + Divisional Level Convention','50 Policies'],['अभियान AAA — Level III','₹9,000 Cash + Divisional Level Convention','100 Policies']][Math.min(AAA.level,3)-1];won.push({name:aaaT[0],prize:aaaT[1],note:aaaT[2]+' + basic eligibility conditions • केवल highest level का prize'});}
-   if(AAA.level>=3 && AAA.n>=115){const blocks=Math.floor((AAA.n-100)/15);won.push({name:'अभियान AAA — Level IV blocks',prize:'₹'+Math.min(100000,blocks*1500).toLocaleString('en-IN')+' Additional Cash',note:`${blocks} additional block(s) of 15 policies; maximum cash award per agent ₹1 lakh`});}
+   if(document.getElementById('aaaEligibleToggle')?.value==='yes'&&AAA.level>=1){const aaaT=[['अभियान AAA — Level I','Divisional Level Convention','12 Policies'],['अभियान AAA — Level II','₹4,000 Cash + Divisional Level Convention','50 Policies'],['अभियान AAA — Level III','₹9,000 Cash + Divisional Level Convention','100 Policies']][Math.min(AAA.level,3)-1];won.push({name:aaaT[0],prize:aaaT[1],note:aaaT[2]+' + basic eligibility conditions • केवल highest level का prize'});}
+   if(document.getElementById('aaaEligibleToggle')?.value==='yes'&&AAA.level>=3 && AAA.n>=115){const blocks=Math.floor((AAA.n-100)/15);won.push({name:'अभियान AAA — Level IV blocks',prize:'₹'+Math.min(100000,blocks*1500).toLocaleString('en-IN')+' Additional Cash',note:`${blocks} additional block(s) of 15 policies; maximum cash award per agent ₹1 lakh`});}
  }
  if(selectedRole==='dos'){
    if(A.total)won.push({name:'ACTIVE SEPTEMBER — NB Campaign',prize:money(A.total),note:`केवल highest achieved Level ${A.level||'—'} का reward + inactive-agent activation award (अलग से cumulative)`});
@@ -1074,7 +1102,7 @@ function calculate(role){
  const blocks=buildCombinedBlocks({as,AAA,BMO,BT,MP,CL,U,P,Pic,A,MPA,PNB,LD,BS,A2D,A2C});
 
  const hasAnyBusiness =
-   selectedRole==='agent' ? (AAA.n>0||AAA.w>0||AAA.f>0||AAA.fp>0||P.n>0||P.t>0||U.valid>0||Pic.n>0||v('gatewayNop')>0||v('glNop')>0||MPA.p>0||MPA.nsp>0||MPA.fpi>0||PNB.nsp>0||LD.n>0) :
+   selectedRole==='agent' ? ((document.getElementById('aaaEligibleToggle')?.value==='yes'&&(AAA.n>0||AAA.w>0||AAA.f>0||AAA.fp>0))||P.n>0||P.t>0||U.valid>0||Pic.n>0||v('gatewayNop')>0||v('glNop')>0||v('gp2Nop')>0||MPA.p>0||MPA.nsp>0||MPA.fpi>0||PNB.nsp>0||LD.n>0) :
    selectedRole==='dos' ? (A.strength>0||A.active>0||A.augActive>0||A.inactiveActivated>0||BT.recruited>0||BT.activated>0||MP.p>0||MP.nsp>0||MP.fpi>0||A2D.strength>0||A2D.active>0) :
    selectedRole==='marketing' ? (BMO.strength>0||BMO.recruited>0||BMO.activated>0||BS.a2b>0||BS.nop>0) :
    (CL.recruited>0||CL.activated>0||CL.n>0||CL.w>0||CL.f>0||A2C.strength>0||A2C.active>0);
@@ -1084,7 +1112,8 @@ function calculate(role){
  let firstUndone=allRows.find(r=>!r.done)||null;
  // v43 FIX: अगला Milestone हमेशा entered achievement से आगे वाला होगा — 150 policies करने के बाद "1 NOP" जैसा पिछला target कभी अगला milestone नहीं दिखेगा (NOP या Premium — दोनों basis पर)।
  if(selectedRole==='agent'&&firstUndone&&basis){
-   const achN=Math.max(P.n,Pic.n,v('gatewayNop'),v('glNop'),U.valid,AAA.n,MPA.p);
+   const aaaSel=document.getElementById('aaaEligibleToggle')?.value==='yes';
+    const achN=Math.max(P.n,Pic.n,v('gatewayNop'),v('glNop'),v('gp2Nop'),U.valid,(aaaSel?AAA.n:0),MPA.p);
    const achP=Math.max(P.t,PNB.nsp,MPA.nsp,MPA.fpi);
    const ahead=r=>{
      if(r.kind==='premium')return r.sortKey>achP;
@@ -1122,7 +1151,7 @@ function calculate(role){
      const rawDone=!!r.done;
      const here=hasAnyBusiness && !basisPending && i===currentIndex && i>=0;
      const locked=rawDone&&!done;
-     ladderHtml += '<div class="rung '+(done?'done ':'')+(here?'current ':'')+(locked?'locked-ahead':'')+'"><div class="dot">'+(i+1)+'</div><div class="rung-box"><div class="rung-title">'+r.title+(here?'<span class="here">YOU ARE HERE</span>':'')+(done?(b.noGate?(b.rows.slice(i+1).some(x=>x.done&&x.compId===r.compId)?'<span class="qualified-mini" style="background:#eef0f3;color:#5c6670;border-color:#cbd2d9">✅ पूरा — prize covered</span>':'<span class="qualified-mini">🏆 REWARD LEVEL</span>'):'<span class="qualified-mini">QUALIFIED</span>'):'')+(locked?'<span class="qualified-mini">🔒 पहले पिछले milestone पूरे करें</span>':'')+(r.compId?compBadge(r.compId,as):'')+'</div><div class="rung-prize">'+r.prize+'</div><div class="smart-benefits">💡 Combined benefit: <b>'+esc(r.benefits||r.prize)+'</b></div><div class="total-required">🏆 Qualify करने के लिए कुल चाहिए: <b>'+r.total+'</b></div><div class="remaining-required">'+(done?'✅ पूरा हो चुका है':locked?'🔒 आगे बढ़ने से पहले ऊपर के milestone पूरे करें':'🎯 अभी शेष: '+r.need)+'</div><div class="milestone-meta"><div class="meta-chip"><strong>'+r.needNop+'</strong><span>शेष NOP</span></div><div class="meta-chip"><strong>'+(r.needPrem===0?'₹0':money(r.needPrem))+'</strong><span>शेष Premium / TFP</span></div><div class="meta-chip"><strong>'+r.days+'</strong><span>शेष दिन</span></div></div></div></div>';
+     ladderHtml += '<div class="rung '+(done?'done ':'')+(here?'current ':'')+(locked?'locked-ahead':'')+'"><div class="dot">'+(i+1)+'</div><div class="rung-box"><div class="rung-title">'+r.title+(here?'<span class="here">YOU ARE HERE</span>':'')+(done?(b.noGate?(b.rows.slice(i+1).some(x=>x.done&&x.compId===r.compId)?'<span class="qualified-mini" style="background:#eef0f3;color:#5c6670;border-color:#cbd2d9">✅ पूरा — prize covered</span>':'<span class="qualified-mini">🏆 REWARD LEVEL</span>'):'<span class="qualified-mini">QUALIFIED</span>'):'')+(locked?'<span class="qualified-mini">🔒 पहले पिछले milestone पूरे करें</span>':'')+(r.compId?compBadge(r.compId,as):'')+'</div><div class="rung-prize">'+r.prize+'</div><div class="smart-benefits">💡 Combined benefit: <b>'+esc(r.benefits||r.prize)+'</b></div><div class="total-required">🏆 Qualify करने के लिए कुल चाहिए: <b>'+r.total+'</b></div>'+(r.achNop!=null?'<div class="progress-so-far">📊 अब तक पूरा: <b>'+r.achNop+' NOP'+((r.achPrem>0)?(' • ₹'+money(r.achPrem)+' Premium/NSP/FPI/TFP'):'')+'</b></div>':'')+'<div class="remaining-required">'+(done?'✅ पूरा हो चुका है':locked?'🔒 आगे बढ़ने से पहले ऊपर के milestone पूरे करें':'🎯 अभी शेष: '+r.need)+'</div><div class="milestone-meta"><div class="meta-chip"><strong>'+r.needNop+'</strong><span>शेष NOP</span></div><div class="meta-chip"><strong>'+(r.needPrem===0?'₹0':money(r.needPrem))+'</strong><span>शेष Premium / TFP</span></div><div class="meta-chip"><strong>'+r.days+'</strong><span>शेष दिन</span></div></div></div></div>';
    });
    ladderHtml += '</div>';
  });
@@ -1143,7 +1172,7 @@ function calculate(role){
  }
 
 }
-document.addEventListener('DOMContentLoaded',()=>{const ab=document.getElementById('agentBasis');if(ab)ab.addEventListener('change',()=>calculate('agent'));document.querySelectorAll('#posters .poster').forEach(p=>{const cap=p.querySelector('.cap');if(cap&&!p.dataset.role)p.dataset.role=posterRoleFromCaption(cap.textContent||'')});filterPosters('agent');document.querySelectorAll('#agentInputFields input,#agentInputFields select').forEach(x=>x.addEventListener('input',updateTotal));document.querySelectorAll('#entry input,#entry select').forEach(x=>x.addEventListener('input',()=>calculate()));document.querySelectorAll('#entry select').forEach(x=>x.addEventListener('change',()=>calculate()));renderDynamicFields();renderDynamicPosters();renderRunning();applyCompetitionExpiry(todayISO());filterPosters(selectedRole);calculate()});
+document.addEventListener('DOMContentLoaded',()=>{const ab=document.getElementById('agentBasis');if(ab)ab.addEventListener('change',()=>calculate('agent'));const aaet=document.getElementById('aaaEligibleToggle');if(aaet)aaet.addEventListener('change',()=>calculate('agent'));document.querySelectorAll('#posters .poster').forEach(p=>{const cap=p.querySelector('.cap');if(cap&&!p.dataset.role)p.dataset.role=posterRoleFromCaption(cap.textContent||'')});filterPosters('agent');document.querySelectorAll('#agentInputFields input,#agentInputFields select').forEach(x=>x.addEventListener('input',updateTotal));document.querySelectorAll('#entry input,#entry select').forEach(x=>x.addEventListener('input',()=>calculate()));document.querySelectorAll('#entry select').forEach(x=>x.addEventListener('change',()=>calculate()));renderDynamicFields();renderDynamicPosters();renderRunning();applyCompetitionExpiry(todayISO());filterPosters(selectedRole);calculate()});
 </script>
 
 <script>
@@ -1648,7 +1677,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 (function(){
   const CF={
     platinum:['pdNop','pdTfp'], missionPlatinumAgent:['mpaPolicies','mpaNsp','mpaFpi'],
-    platinumNspBonanza:['pnbNsp'], picnic:['picnicNop','puriQualified'], gatewayPlatinum:['gatewayNop'], gatewayLuckyDraw:['glNop'],
+    platinumNspBonanza:['pnbNsp'], picnic:['picnicNop','puriQualified'], gatewayPlatinum:['gatewayNop'], gatewayLuckyDraw:['glNop'], gatewayPlatinum2:['gp2Nop'],
     platinumLuckyDraw:['luckyDrawNop'], aaaAgents:['aaaNop','aaaWrp','aaaFypi','aaaMonthly','aaaFirstPremium'],
     uleap:['ulip','invalidUlip','enach','appointment'], activeSep:['dosAgencyStrength','dosActiveAgents','dosAugActive','dosInactiveActivated'],
     biggerTeam:['btRecruited','btActivated'], missionPlatinum:['mpPolicies','mpNsp','mpFpi'],
@@ -1688,6 +1717,8 @@ document.addEventListener('DOMContentLoaded',()=>{
       const n=num('glNop'); [[1,'LIC बैग'],[2,'पैटर्न वाला बैग'],[3,'दोनों बैग (LIC बैग + पैटर्न वाला बैग)']].forEach(([t,r])=>rows.push({done:n>=t,needNop:Math.max(0,t-n),needPrem:0,title:`${t} NOP`,reward:r,total:`${t} NOP (17–22 Sep)`,days:daysLeft('2026-09-22',as)}));
     } else if(id==='gatewayPlatinum'){
       const n=num('gatewayNop'); [[1,'₹150'],[2,'₹300'],[3,'₹450']].forEach(([t,r])=>rows.push({done:n>=t,needNop:Math.max(0,t-n),needPrem:0,title:`${t} NOP`,reward:r,total:`${t} NOP (12–15 Sep)`,days:daysLeft('2026-09-15',as)}));
+    } else if(id==='gatewayPlatinum2'){
+      const n=num('gp2Nop'); [[1,'2× 9W Bajaj LED Bulb'],[2,'5× 9W Bajaj LED Bulb'],[3,'1× Bajaj Iron']].forEach(([t,r])=>rows.push({done:n>=t,needNop:Math.max(0,t-n),needPrem:0,title:`${t} NOP`,reward:r,total:`${t} NOP (23–30 Sep)`,days:daysLeft('2026-09-30',as)}));
     } else if(id==='picnic'){
       const n=num('picnicNop'); [[1,'₹150'],[2,'₹300'],[3,'Picnic (Single)']].forEach(([t,r])=>rows.push({done:n>=t,needNop:Math.max(0,t-n),needPrem:0,title:`${t} NOP`,reward:r,total:`${t} NOP (02–11 Sep)`,days:daysLeft('2026-09-11',as)}));
     } else if(id==='platinum'){
@@ -1735,6 +1766,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const set=(nop,prem,premLabel='Premium')=>{m.nop=Number(nop||0);m.prem=Number(prem||0);m.premLabel=premLabel;};
     if(id==='gatewayPlatinum') set(num('gatewayNop'),0,'Premium');
     if(id==='gatewayLuckyDraw') set(num('glNop'),0,'Premium');
+    else if(id==='gatewayPlatinum2') set(num('gp2Nop'),0,'Premium');
     else if(id==='picnic') set(num('picnicNop'),0,'Premium');
     else if(id==='platinum') set(num('pdNop'),num('pdTfp'),'TFP');
     else if(id==='missionPlatinumAgent') set(num('mpaPolicies'),num('mpaFpi'),'FPI');
@@ -1793,7 +1825,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const upcoming=comps.filter(c=>state(c,as)==='upcoming'&&(!c.roles||c.roles.includes(role))).sort((a,b)=>dateObj(a.start)-dateObj(b.start));
     const top=document.getElementById('runningCountTop'),numEl=document.getElementById('runningCount'),dateEl=document.getElementById('todayText'); if(top)top.textContent=list.length;if(numEl)numEl.textContent=list.length;if(dateEl)dateEl.textContent=fmt(as);
     const sub=document.querySelector('.running-hero .running-sub');if(sub)sub.innerHTML=`आज की तारीख: <b>${fmt(as)}</b> • नीचे केवल आज active competitions हैं।`;
-    const text={activeSep:'Level A: 30% activation • Level B: 35% • Level C: 40% (August 2026) • inactive-agent activation पर ₹200 each',uleap:'11 ULIP ₹5,000 → 21 ₹15,000 → 35 ₹35,000 → 51 ₹65,000 → 75 ₹1,00,000 → 101 ₹1,75,000',platinum:'5/7/10/15/21/31/41/51/75/101/125/150 NOP OR TFP milestones — Fan से Royal Enfield तक',gatewayPlatinum:'1 NOP ₹150 • 2 NOP ₹300 • 3 NOP ₹450',gatewayLuckyDraw:'17–22 Sep: 1 NOP = LIC बैग • 2 NOP = पैटर्न वाला बैग • 3 NOP = दोनों बैग • Min premium ULIP ₹4,000 / Non-ULIP ₹2,000 • 751 मान्य नहीं',bmoRecruit:'6% recruitment + activation = ₹5,000 per BMO • हर अतिरिक्त 1% = ₹2,500',aaaAgents:'12 / 50 / 100 Policies milestones • आगे हर 15 policies पर ₹1,500',biggerTeam:'2 recruited + activated agents = ₹4,000 • हर अतिरिक्त agent ₹2,000 • cap ₹1 lakh',missionPlatinum:'125 / 200 / 325 / 525 / 800 Policies OR NSP/FPI thresholds',missionPlatinumAgent:'50 / 75 / 125 / 200 / 300 Policies OR NSP/FPI thresholds',platinumNspBonanza:'NSP ₹5L/₹7L/₹12L/₹20L/₹30L/₹50L slabs; thereafter every ₹10L block',platinumLuckyDraw:'01–15 Sep: eligible policy पर 1 coupon • 1st LED TV • 2nd Refrigerator • 3rd Microwave Oven',cliaShikhar:'8 new agents + activation/qualification conditions • 5 performance levels up to ₹1.25 lakh'};
+    const text={activeSep:'Level A: 30% activation • Level B: 35% • Level C: 40% (August 2026) • inactive-agent activation पर ₹200 each',uleap:'11 ULIP ₹5,000 → 21 ₹15,000 → 35 ₹35,000 → 51 ₹65,000 → 75 ₹1,00,000 → 101 ₹1,75,000',platinum:'5/7/10/15/21/31/41/51/75/101/125/150 NOP OR TFP milestones — Fan से Royal Enfield तक',gatewayPlatinum:'1 NOP ₹150 • 2 NOP ₹300 • 3 NOP ₹450',gatewayLuckyDraw:'17–22 Sep: 1 NOP = LIC बैग • 2 NOP = पैटर्न वाला बैग • 3 NOP = दोनों बैग • Min premium ULIP ₹4,000 / Non-ULIP ₹2,000 • 751 मान्य नहीं',gatewayPlatinum2:'23–30 Sep: 1 NOP = 2× 9W Bajaj LED Bulb • 2 NOP = 5× 9W Bajaj LED Bulb • 3 NOP = 1× Bajaj Iron • Min premium ULIP ₹4,000 / Non-ULIP ₹2,000 • Table 751 मान्य नहीं',bmoRecruit:'6% recruitment + activation = ₹5,000 per BMO • हर अतिरिक्त 1% = ₹2,500',aaaAgents:'12 / 50 / 100 Policies milestones • आगे हर 15 policies पर ₹1,500',biggerTeam:'2 recruited + activated agents = ₹4,000 • हर अतिरिक्त agent ₹2,000 • cap ₹1 lakh',missionPlatinum:'125 / 200 / 325 / 525 / 800 Policies OR NSP/FPI thresholds',missionPlatinumAgent:'50 / 75 / 125 / 200 / 300 Policies OR NSP/FPI thresholds',platinumNspBonanza:'NSP ₹5L/₹7L/₹12L/₹20L/₹30L/₹50L slabs; thereafter every ₹10L block',platinumLuckyDraw:'01–15 Sep: eligible policy पर 1 coupon • 1st LED TV • 2nd Refrigerator • 3rd Microwave Oven',cliaShikhar:'8 new agents + activation/qualification conditions • 5 performance levels up to ₹1.25 lakh'};
     const card=c=>{const dl=daysLeft(c.end,as),urgent=dl<=3;return `<div class="running-card ${urgent?'urgent':''}"><div class="running-card-head"><div class="running-card-main"><div class="comp-title">${esc2(c.name)}</div><div class="live-tag">● RUNNING</div><div class="days-attention ${urgent?'urgent-days':''}">⏳ शेष दिन: <strong>${dl}</strong></div><div class="card-window">📅 प्रतियोगिता अवधि: <b>${fmt(c.start)} – ${fmt(c.end)}</b></div>${urgent?'<div class="urgent-badge">⚠️ जल्दी समाप्त — अभी करें</div>':''}</div></div><div class="running-info"><b>${esc2(text[c.id]||'Competition की detailed conditions Posters में देखें।')}</b></div><div class="comp-quick-actions"><button type="button" class="comp-quick-btn poster" onclick="openCompetitionPoster('${c.id}')">🖼️ View Poster</button><button type="button" class="comp-quick-btn primary" onclick="openCompetitionMilestone('${c.id}')">🏆 Milestone</button></div></div>`};
     const rl=document.getElementById('runningList');if(rl)rl.innerHTML=list.length?list.map(card).join(''):'<div class="empty">आज कोई competition running नहीं है।</div>';
     const cs=document.getElementById('comingSoonWrap'),cl=document.getElementById('comingSoonList');if(upcoming.length){cs.style.display='block';cl.innerHTML=upcoming.map(c=>`<div class="coming-card"><div class="comp-title">${esc2(c.name)}</div><div class="live-tag coming-tag">● COMING SOON</div><div class="days-attention coming-days">⏳ शुरू होने में: <strong>${Math.ceil((dateObj(c.start)-dateObj(as))/86400000)} दिन</strong></div><div class="card-window">📅 प्रतियोगिता अवधि: <b>${fmt(c.start)} – ${fmt(c.end)}</b></div><div class="running-info"><b>${esc2(text[c.id]||'Competition की detailed conditions देखें।')}</b></div><div class="comp-quick-actions"><button type="button" class="comp-quick-btn poster" onclick="openCompetitionPoster('${c.id}')">🖼️ View Poster</button><button type="button" class="comp-quick-btn primary" onclick="openCompetitionMilestone('${c.id}')">🏆 Milestone</button></div></div>`).join('')}else{cs.style.display='none';cl.innerHTML=''}
